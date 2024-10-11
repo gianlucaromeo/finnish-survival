@@ -16,7 +16,7 @@ class LearnPage extends StatelessWidget {
     return Scaffold(
       /// TOP BAR
       appBar: const CustomAppBar(
-        title: "Lorem ipsum",
+        title: "Learn",
       ),
 
       /// OTHER
@@ -30,7 +30,7 @@ class LearnPage extends StatelessWidget {
           children: [
             /// TITLE
             Text(
-              "Lorem ipsum dolor sit amet?",
+              "What do you want to learn today?",
               style: AppFonts.h1,
             ),
 

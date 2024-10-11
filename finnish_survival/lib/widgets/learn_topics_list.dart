@@ -117,10 +117,10 @@ class LearnTopicsList extends StatelessWidget {
         child: Column(
           children: [
             ...List.generate(
-              topics.keys.length,
+              topicsFormalInformal.keys.length,
               (index) {
                 return _LearnTopicItem(
-                  title: topics.keys.elementAt(index),
+                  title: topicsFormalInformal.keys.elementAt(index),
                   isComplete: Random().nextBool(),
                   isFavorite: Random().nextBool(),
                   onTap: () {
@@ -128,7 +128,7 @@ class LearnTopicsList extends StatelessWidget {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => LearnTopicPage(
-                          title: topics.keys.elementAt(index),
+                          title: topicsFormalInformal.keys.elementAt(index),
                         ),
                       ),
                     );

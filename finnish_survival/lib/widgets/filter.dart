@@ -37,7 +37,7 @@ class Filter extends StatelessWidget {
             8.0.horizontalSpace,
 
             /// FILTER TITLE
-            Text("Lorem ipsum", style: AppFonts.bodyS),
+            Text("Filter", style: AppFonts.bodyS),
             12.0.horizontalSpace,
 
             /// FILTERS NUMBERS OR ARROW

@@ -1,69 +1,72 @@
-final topics = {
+final topicsFormalInformal = {
   "Greetings": {
     "id": "greetings",
     "learn": {
       "Hello": {
         "id": "hello",
-        "formal": ["Moi", "Moikka", "Hei", "Päivää"],
-        "informal": ["Moro", "Moi", "Heippa", "Heihei"],
+        "informal": ["Moi", "Moikka", "Hei", "Päivää"],
+        "formal": ["Moro", "Moi", "Heippa", "Heihei"],
       },
       "Goodbye": {
         "id": "goodbye",
-        "formal": ["Näkemiin", "Hyvästi", "Hei hei"],
         "informal": ["Moikka", "Heippa", "Heihei"],
+        "formal": ["Näkemiin", "Hyvästi", "Hei hei"],
       },
       "Thank you": {
         "id": "thank_you",
-        "formal": ["Kiitos", "Suuret kiitokset", "Paljon ki"],
         "informal": ["Kiitti", "Kiitos", "Kiitos paljon"],
+        "formal": ["Kiitos", "Suuret kiitokset", "Paljon ki"],
       },
       "You're welcome": {
         "id": "youre_welcome",
-        "formal": ["Ole hyvä", "Ei kestä", "Eipä kestä"],
         "informal": ["Eipä kestä", "Ei kestä", "Ole hyvä"],
+        "formal": ["Ole hyvä", "Ei kestä", "Eipä kestä"],
       },
       "Excuse me": {
         "id": "excuse_me",
-        "formal": ["Anteeksi", "Anteeksi, että häiritsen"],
         "informal": ["Anteeksi", "Anteeksi, että häiritsen"],
+        "formal": ["Anteeksi", "Anteeksi, että häiritsen"],
       },
       "I'm sorry": {
         "id": "im_sorry",
-        "formal": ["Olen pahoillani", "Anteeksi"],
         "informal": ["Olen pahoillani", "Anteeksi"],
+        "formal": ["Olen pahoillani", "Anteeksi"],
       },
     },
-    "practice": {
-      "1": {
-        "id": "practice_1",
-        "question": "How do you say 'Hello' in Finnish?",
-        "answers": ["Moi", "Anteeksi", "Kiitos", "Minä"],
-        "correct": "Moi",
-      },
-      "2": {
-        "id": "practice_2",
-        "question": "How do you say 'Goodbye' in Finnish?",
-        "answers": ["Näkemiin", "Hei", "Moi", "Heippa"],
-        "correct": "Näkemiin",
-      },
-    }
   },
   "Family": {
     "id": "family",
-  },
-  "Numbers": {
-    "id": "numbers",
-  },
-  "Days of the Week": {
-    "id": "days_of_the_week",
-  },
-  "Verb To Be": {
-    "id": "verb_to_be",
-  },
-  "Verb To Have": {
-    "id": "verb_to_have",
-  },
-  "Verb To Do": {
-    "id": "verb_to_do",
+    "learn": {
+      "Mother": {
+        "id": "mother",
+        "informal": ["Äiti", "Mutsi", "Äiskä"],
+        "formal": ["Äiti", "Äitini", "Äitimuori"],
+      },
+      "Father": {
+        "id": "father",
+        "informal": ["Isä", "Iskä", "Isi"],
+        "formal": ["Isä", "Isäni", "Isukki"],
+      },
+      "Brother": {
+        "id": "brother",
+        "informal": ["Veli", "Velipoika", "Veljenpoika"],
+        "formal": ["Veli", "Veljeni", "Velipoikani"],
+      },
+      "Sister": {
+        "id": "sister",
+        "informal": ["Sisko", "Siskopuoli", "Siskontytär"],
+        "formal": ["Sisko", "Siskoni", "Siskopuoleni"],
+      },
+      "Grandmother": {
+        "id": "grandmother",
+        "informal": ["Mummi", "Mummo", "Isoäiti"],
+        "formal": ["Mummi", "Isoäiti", "Mummoni"],
+      },
+      "Grandfather": {
+        "id": "grandfather",
+        "informal": ["Pappa", "Vaari", "Isoisä"],
+        "formal": ["Pappa", "Isoisä", "Pappani"],
+      },
+    },
   },
 };
