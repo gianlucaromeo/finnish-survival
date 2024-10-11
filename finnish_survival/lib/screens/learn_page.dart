@@ -2,7 +2,7 @@ import 'dart:developer' as dev;
 
 import 'package:finnish_survival/config/theme.dart';
 import 'package:finnish_survival/extensions.dart';
-import 'package:finnish_survival/screens/learn_items_list.dart';
+import 'package:finnish_survival/widgets/learn_topics_list.dart';
 import 'package:finnish_survival/widgets/app_bar.dart';
 import 'package:finnish_survival/widgets/app_bottom_bar.dart';
 import 'package:finnish_survival/widgets/filter.dart';
@@ -46,7 +46,7 @@ class LearnPage extends StatelessWidget {
             24.0.verticalSpace,
 
             /// LIST
-            const LearnItemsList(),
+            const LearnTopicsList(),
           ],
         ),
       ),

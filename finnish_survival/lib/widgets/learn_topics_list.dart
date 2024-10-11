@@ -1,20 +1,25 @@
-import 'dart:developer';
+import 'dart:developer' as dev;
+import 'dart:math';
+
+import 'package:finnish_survival/mock_data.dart';
+import 'package:finnish_survival/screens/learn_topic_page.dart';
+import 'package:flutter/material.dart';
 
 import 'package:finnish_survival/config/theme.dart';
 import 'package:finnish_survival/extensions.dart';
-import 'package:flutter/material.dart';
 
-class LearnItem extends StatelessWidget {
-  const LearnItem({
-    super.key,
+class _LearnTopicItem extends StatelessWidget {
+  const _LearnTopicItem({
     required this.isComplete,
     required this.isFavorite,
+    required this.title,
     required this.onFavoriteTap,
     required this.onTap,
   });
 
   final bool isComplete;
   final bool isFavorite;
+  final String title;
   final Function onFavoriteTap;
   final Function onTap;
 
@@ -56,7 +61,7 @@ class LearnItem extends StatelessWidget {
                     ),
                     child: IconButton(
                       onPressed: () {
-                        log(name: "LearnItem / Favorite Icon", "Tapped");
+                        dev.log(name: "LearnItem / Favorite Icon", "Tapped");
                         onFavoriteTap.call();
                       },
                       icon: isFavorite
@@ -70,7 +75,7 @@ class LearnItem extends StatelessWidget {
                   /// TITLE
                   Expanded(
                     child: Text(
-                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                      title,
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                       style: AppFonts.h4,
@@ -81,7 +86,7 @@ class LearnItem extends StatelessWidget {
                   /// ICON
                   IconButton(
                     onPressed: () {
-                      log(name: "LearnItem / Favorite icon", "Tapped");
+                      dev.log(name: "LearnItem / Favorite icon", "Tapped");
                       onTap.call();
                     },
                     icon: Icon(
@@ -94,6 +99,51 @@ class LearnItem extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+
+class LearnTopicsList extends StatelessWidget {
+  const LearnTopicsList({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            ...List.generate(
+              topics.keys.length,
+              (index) {
+                return _LearnTopicItem(
+                  title: topics.keys.elementAt(index),
+                  isComplete: Random().nextBool(),
+                  isFavorite: Random().nextBool(),
+                  onTap: () {
+                    dev.log(name: "LearnPage / LearnItem / onTap", "TODO");
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => LearnTopicPage(
+                          title: topics.keys.elementAt(index),
+                        ),
+                      ),
+                    );
+                  },
+                  onFavoriteTap: () {
+                    dev.log(
+                      name: "LearnPage / LearnItem / onFavoriteTap",
+                      "TODO",
+                    );
+                  },
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
