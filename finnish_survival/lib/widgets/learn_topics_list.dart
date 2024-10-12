@@ -1,7 +1,6 @@
 import 'dart:developer' as dev;
-import 'dart:math';
 
-import 'package:finnish_survival/mock_data.dart';
+import 'package:finnish_survival/db.dart';
 import 'package:finnish_survival/screens/learn_topic_page.dart';
 import 'package:flutter/material.dart';
 
@@ -117,18 +116,19 @@ class LearnTopicsList extends StatelessWidget {
         child: Column(
           children: [
             ...List.generate(
-              topicsWords.keys.length,
+              db.topics.length,
               (index) {
+                final topic = db.topics[index];
                 return _LearnTopicItem(
-                  title: topicsWords.keys.elementAt(index),
-                  isComplete: Random().nextBool(),
-                  isFavorite: Random().nextBool(),
+                  title: topic.name,
+                  isComplete: topic.isComplete,
+                  isFavorite: topic.isFavorite,
                   onTap: () {
                     dev.log(name: "LearnPage / LearnItem / onTap", "TODO");
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => LearnTopicPage(
-                          title: topicsWords.keys.elementAt(index),
+                          topic: topic,
                         ),
                       ),
                     );

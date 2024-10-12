@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:finnish_survival/config/theme.dart';
 import 'package:finnish_survival/extensions.dart';
-import 'package:finnish_survival/mock_data.dart';
+import 'package:finnish_survival/models.dart';
 import 'package:finnish_survival/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -74,10 +74,10 @@ class _LearnTopicItem extends StatelessWidget {
 class LearnTopicPage extends StatefulWidget {
   const LearnTopicPage({
     super.key,
-    required this.title,
+    required this.topic,
   });
 
-  final String title;
+  final Topic topic;
 
   @override
   State<LearnTopicPage> createState() => _LearnTopicPageState();
@@ -87,19 +87,11 @@ class _LearnTopicPageState extends State<LearnTopicPage> {
   int _currentStep = 0;
 
   late int totalSteps = 0;
-  late Map<String, dynamic> topicData;
-  late String topicTitle;
-  late List<String> topicWords;
 
   @override
   void initState() {
     super.initState();
-    topicData =
-        topicsWords[widget.title]!["learn"] as Map<String, dynamic>;
-    topicTitle = topicData.keys.elementAt(_currentStep);
-    topicWords = topicData[topicTitle]["words"] as List<String>;
-    totalSteps =
-        (topicsWords[widget.title]!["learn"] as Map).keys.length;
+    totalSteps = widget.topic.words.length;
   }
 
   @override
@@ -107,7 +99,7 @@ class _LearnTopicPageState extends State<LearnTopicPage> {
     return Scaffold(
       /// TOP BAR
       appBar: CustomAppBar(
-        title: widget.title,
+        title: widget.topic.name,
       ),
 
       /// OTHER
@@ -129,22 +121,23 @@ class _LearnTopicPageState extends State<LearnTopicPage> {
             ),
             32.0.verticalSpace,
 
-            Text(topicTitle, style: AppFonts.h1),
+            Text(widget.topic.words[_currentStep].word, style: AppFonts.h1),
             8.0.verticalSpace,
 
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    ...topicWords.map((e) {
-                      return _LearnTopicItem(
-                        isFavorite: false,
-                        title: e,
+                    // translations of words
+                    ...widget.topic.words[_currentStep].finnishTranslations.map(
+                      (word) => _LearnTopicItem(
+                        isFavorite: word.isFavorite,
+                        title: word.word,
                         onFavoriteTap: () {
-                          log(name: "LearnTopicPage / Favorite Icon", "TODO");
+                          log(name: "LearnItem / Favorite icon", "Tapped");
                         },
-                      );
-                    })
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -157,8 +150,6 @@ class _LearnTopicPageState extends State<LearnTopicPage> {
                 onPressed: () {
                   setState(() {
                     _currentStep++;
-                    topicTitle = topicData.keys.elementAt(_currentStep);
-                    topicWords = topicData[topicTitle]["words"] as List<String>;
                   });
                 },
                 style: ElevatedButton.styleFrom(
