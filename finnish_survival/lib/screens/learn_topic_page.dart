@@ -85,7 +85,6 @@ class LearnTopicPage extends StatefulWidget {
 
 class _LearnTopicPageState extends State<LearnTopicPage> {
   int _currentStep = 0;
-  bool _isFormal = false;
 
   late int totalSteps = 0;
   late Map<String, dynamic> topicData;
@@ -95,11 +94,12 @@ class _LearnTopicPageState extends State<LearnTopicPage> {
   @override
   void initState() {
     super.initState();
-    topicData = topicsFormalInformal[widget.title]!["learn"] as Map<String, dynamic>;
+    topicData =
+        topicsWords[widget.title]!["learn"] as Map<String, dynamic>;
     topicTitle = topicData.keys.elementAt(_currentStep);
-    topicWords = topicData[topicTitle][_isFormal ? "formal" : "informal"]
-        as List<String>;
-    totalSteps = (topicsFormalInformal[widget.title]!["learn"] as Map).keys.length * 2;
+    topicWords = topicData[topicTitle]["words"] as List<String>;
+    totalSteps =
+        (topicsWords[widget.title]!["learn"] as Map).keys.length;
   }
 
   @override
@@ -132,9 +132,6 @@ class _LearnTopicPageState extends State<LearnTopicPage> {
             Text(topicTitle, style: AppFonts.h1),
             8.0.verticalSpace,
 
-            Text(_isFormal ? "Formal" : "Informal", style: AppFonts.h4),
-            16.0.verticalSpace,
-
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
@@ -159,17 +156,9 @@ class _LearnTopicPageState extends State<LearnTopicPage> {
               child: ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    _isFormal = !_isFormal;
                     _currentStep++;
-
-                    if (!_isFormal) {
-                      topicTitle = topicData.keys.elementAt(_currentStep ~/ 2);
-                      topicWords = topicData[topicTitle]["informal"]
-                          as List<String>;
-                    } else {
-                      topicWords = topicData[topicTitle]["formal"]
-                          as List<String>;
-                    }
+                    topicTitle = topicData.keys.elementAt(_currentStep);
+                    topicWords = topicData[topicTitle]["words"] as List<String>;
                   });
                 },
                 style: ElevatedButton.styleFrom(

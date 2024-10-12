@@ -1,36 +1,30 @@
-final topicsFormalInformal = {
+final topicsWords = {
   "Greetings": {
     "id": "greetings",
     "learn": {
       "Hello": {
         "id": "hello",
-        "informal": ["Moi", "Moikka", "Hei", "Päivää"],
-        "formal": ["Moro", "Moi", "Heippa", "Heihei"],
+        "words": ["Moi", "Moikka", "Hei", "Päivää"],
       },
       "Goodbye": {
         "id": "goodbye",
-        "informal": ["Moikka", "Heippa", "Heihei"],
-        "formal": ["Näkemiin", "Hyvästi", "Hei hei"],
+        "words": ["Moikka", "Heippa", "Heihei"],
       },
       "Thank you": {
         "id": "thank_you",
-        "informal": ["Kiitti", "Kiitos", "Kiitos paljon"],
-        "formal": ["Kiitos", "Suuret kiitokset", "Paljon ki"],
+        "words": ["Kiitti", "Kiitos", "Kiitos paljon"],
       },
       "You're welcome": {
         "id": "youre_welcome",
-        "informal": ["Eipä kestä", "Ei kestä", "Ole hyvä"],
-        "formal": ["Ole hyvä", "Ei kestä", "Eipä kestä"],
+        "words": ["Eipä kestä", "Ei kestä", "Ole hyvä"],
       },
       "Excuse me": {
         "id": "excuse_me",
-        "informal": ["Anteeksi", "Anteeksi, että häiritsen"],
-        "formal": ["Anteeksi", "Anteeksi, että häiritsen"],
+        "words": ["Anteeksi", "Anteeksi, että häiritsen"],
       },
       "I'm sorry": {
         "id": "im_sorry",
-        "informal": ["Olen pahoillani", "Anteeksi"],
-        "formal": ["Olen pahoillani", "Anteeksi"],
+        "words": ["Olen pahoillani", "Anteeksi"],
       },
     },
   },
@@ -39,33 +33,27 @@ final topicsFormalInformal = {
     "learn": {
       "Mother": {
         "id": "mother",
-        "informal": ["Äiti", "Mutsi", "Äiskä"],
-        "formal": ["Äiti", "Äitini", "Äitimuori"],
+        "words": ["Äiti", "Mutsi", "Äiskä"],
       },
       "Father": {
         "id": "father",
-        "informal": ["Isä", "Iskä", "Isi"],
-        "formal": ["Isä", "Isäni", "Isukki"],
+        "words": ["Isä", "Iskä", "Isi"],
       },
       "Brother": {
         "id": "brother",
-        "informal": ["Veli", "Velipoika", "Veljenpoika"],
-        "formal": ["Veli", "Veljeni", "Velipoikani"],
+        "words": ["Veli", "Velipoika", "Veljenpoika"],
       },
       "Sister": {
         "id": "sister",
-        "informal": ["Sisko", "Siskopuoli", "Siskontytär"],
-        "formal": ["Sisko", "Siskoni", "Siskopuoleni"],
+        "words": ["Sisko", "Siskopuoli", "Siskontytär"],
       },
       "Grandmother": {
         "id": "grandmother",
-        "informal": ["Mummi", "Mummo", "Isoäiti"],
-        "formal": ["Mummi", "Isoäiti", "Mummoni"],
+        "words": ["Mummi", "Mummo", "Isoäiti"],
       },
       "Grandfather": {
         "id": "grandfather",
-        "informal": ["Pappa", "Vaari", "Isoisä"],
-        "formal": ["Pappa", "Isoisä", "Pappani"],
+        "words": ["Pappa", "Vaari", "Isoisä"],
       },
     },
   },
