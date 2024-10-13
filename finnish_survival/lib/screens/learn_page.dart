@@ -20,11 +20,13 @@ class LearnPage extends StatelessWidget {
               "What do you want to learn today?",
               style: AppFonts.h1,
             ),
-            AppSpace.verticalRegular,
+
+            12.0.verticalSpace,
             Filter(
               selected: 0,
               onOpenFilters: () {},
             ),
+
             24.0.verticalSpace,
             const LearnTopicsList(),
           ],

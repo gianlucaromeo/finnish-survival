@@ -10,28 +10,22 @@ class LearnTopicFinnishWords extends GetView<DbController> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Obx(
-            () {
-          final currentTopic = controller.learnTopic.value!;
-          final currentWordIndex = controller.learnWordIndex.value!;
-          final currentWord = currentTopic.words[currentWordIndex];
-          final translations = currentWord.finnishTranslations;
-          return Column(
-            children: [
-              ...translations.map(
-                    (finnishWord) => LearnFinnishWordItem(
-                  finnishWord: finnishWord,
-                  onFavoriteTap: () {
-                    controller.toggleFinnishWordIsFavorite(
-                      finnishWord.id,
-                    );
-                  },
-                ),
+      child: Obx(() {
+        return Column(
+          children: [
+            ...controller.currentTranslations.map(
+              (finnishWord) => LearnFinnishWordItem(
+                finnishWord: finnishWord,
+                onFavoriteTap: () {
+                  controller.toggleFinnishWordIsFavorite(
+                    finnishWord.id,
+                  );
+                },
               ),
-            ],
-          );
-        },
-      ),
+            ),
+          ],
+        );
+      }),
     );
   }
 }

@@ -6,10 +6,6 @@ class AppPadding {
   static get scaffoldPadding => [24.0, 24.0, 24.0, 0.0].fromLTRB;
 }
 
-class AppSpace {
-  static get verticalRegular => 12.0.verticalSpace;
-}
-
 class AppColors {
   /* HIGHLIGHTS */
   static get highlightsDarkest => const Color(0xFF006FFD);

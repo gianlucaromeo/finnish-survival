@@ -13,6 +13,10 @@ class DbController {
   final RxnInt learnWordIndex = RxnInt();
   final RxBool isLearnTopicComplete = false.obs;
 
+  List<FinnishWord> get currentTranslations {
+    return learnTopic.value!.words[learnWordIndex.value!].finnishTranslations;
+  }
+
   void setLearnTopic(Topic topic) {
     learnTopic.value = topic;
     nextLearnEnglishWord();
