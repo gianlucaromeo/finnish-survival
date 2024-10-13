@@ -1,7 +1,10 @@
+import 'dart:developer';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 class _Keys {
   static const topicsFavorites = 'topicsFavorites';
+  static const finnishWordsFavorites = 'finnishWordsFavorites';
 }
 
 class LocalDbService {
@@ -10,24 +13,36 @@ class LocalDbService {
   LocalDbService(this._prefs);
 
   List<String> get topicFavorites {
-    final favorites = _prefs.getStringList(_Keys.topicsFavorites);
-    return favorites ?? [];
+    return _prefs.getStringList(_Keys.topicsFavorites) ?? [];
   }
 
-  void setTopicFavorite(String topicId, bool isFavorite) {
-    final currentFavorites = topicFavorites;
+  List<String> get finnishWordsFavorites {
+    return _prefs.getStringList(_Keys.finnishWordsFavorites) ?? [];
+  }
 
-    final newFavorite = isFavorite && !currentFavorites.contains(topicId);
-    final oldFavorite = currentFavorites.contains(topicId) && !isFavorite;
+  /// Toggle favorite status for a topic or a finnish word.
+  void _toggleFavorite(String key, String id, bool isFavorite) {
+    final currentFavorites = _prefs.getStringList(key) ?? [];
+
+    final newFavorite = isFavorite && !currentFavorites.contains(id);
+    final oldFavorite = currentFavorites.contains(id) && !isFavorite;
 
     if (newFavorite) {
       // Add to favorites
-      currentFavorites.add(topicId);
-      _prefs.setStringList(_Keys.topicsFavorites, currentFavorites);
+      currentFavorites.add(id);
+      _prefs.setStringList(key, currentFavorites);
     } else if (oldFavorite) {
       // Remove from favorites
-      currentFavorites.remove(topicId);
-      _prefs.setStringList(_Keys.topicsFavorites, currentFavorites);
+      currentFavorites.remove(id);
+      _prefs.setStringList(key, currentFavorites);
     }
+  }
+
+  void setTopicFavorite(String topicId, bool isFavorite) {
+    _toggleFavorite(_Keys.topicsFavorites, topicId, isFavorite);
+  }
+
+  void setFinnishWordFavorite(String finnishWordId, bool isFavorite) {
+    _toggleFavorite(_Keys.finnishWordsFavorites, finnishWordId, isFavorite);
   }
 }

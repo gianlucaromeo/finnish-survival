@@ -124,9 +124,10 @@ class LearnTopicsList extends GetView<DbController> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => LearnTopicPage(
-                            topic: topic,
-                          ),
+                          builder: (context) {
+                            controller.setLearnTopic(topic);
+                            return const LearnTopicPage();
+                          },
                         ),
                       );
                     },

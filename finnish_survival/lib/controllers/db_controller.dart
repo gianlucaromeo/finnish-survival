@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:finnish_survival/db.dart';
 import 'package:finnish_survival/models/models.dart';
 import 'package:finnish_survival/service/db_service.dart';
@@ -10,6 +12,49 @@ class DbController {
 
   final RxList<Topic> topics = <Topic>[].obs;
 
+  /* State for LearnTopicPage */
+  final Rxn<Topic> learnTopic = Rxn<Topic>();
+  final RxnInt learnWordIndex = RxnInt();
+
+  void setLearnTopic(Topic topic) {
+    learnTopic.value = topic;
+    nextLearnEnglishWord();
+  }
+
+  void resetLearnTopic() async {
+    // TODO: Fix this:
+    // Without this delay, LearnTopicPage tries to render the topic data but
+    // the data is already null.
+    await Future.delayed(const Duration(milliseconds: 500));
+
+    learnTopic.value = null;
+    learnWordIndex.value = null;
+  }
+
+  void nextLearnEnglishWord() {
+    learnWordIndex.value = (learnWordIndex.value ?? -1) + 1;
+  }
+
+  void _updateLearnTopic(String finnishWordId) {
+    if (learnTopic.value != null) {
+      final newLearnTopic = learnTopic.value!.copyWith(
+        words: learnTopic.value!.words.map((word) {
+          final newFinnishWords = word.finnishTranslations.map((finnishWord) {
+            if (finnishWord.id == finnishWordId) {
+              return finnishWord.copyWith(isFavorite: !finnishWord.isFavorite);
+            } else {
+              return finnishWord;
+            }
+          }).toList();
+
+          return word.copyWith(finnishTranslations: newFinnishWords);
+        }).toList(),
+      );
+
+      learnTopic.value = newLearnTopic;
+    }
+  }
+
   DbController(Database initialDb) {
     // Load initial db
     _database = initialDb;
@@ -17,10 +62,22 @@ class DbController {
     // Load favorite topics from local db
     final localTopicFavorites = localDbService.topicFavorites;
 
+    // Load favorite finnish words from local db
+    final localFinnishWordFavorites = localDbService.finnishWordsFavorites;
+
     // Update topics with favorite status
     final newTopics = _database.topics.map((topic) {
       return topic.copyWith(
         isFavorite: localTopicFavorites.contains(topic.id),
+        words: topic.words.map((word) {
+          return word.copyWith(
+            finnishTranslations: word.finnishTranslations.map((finnishWord) {
+              return finnishWord.copyWith(
+                isFavorite: localFinnishWordFavorites.contains(finnishWord.id),
+              );
+            }).toList(),
+          );
+        }).toList(),
       );
     }).toList();
 
@@ -55,5 +112,41 @@ class DbController {
     }).toList();
 
     _setTopics(newTopics);
+  }
+
+  void toggleFinnishWordIsFavorite(String finnishWordId) {
+    // Update topics
+    final newTopics = topics.map((topic) {
+      // Update words
+      final newWords = topic.words.map((word) {
+        // Update finnish words
+        final newFinnishWords = word.finnishTranslations.map((finnishWord) {
+          if (finnishWord.id == finnishWordId) {
+            // Update local db
+            localDbService.setFinnishWordFavorite(
+              finnishWordId,
+              !finnishWord.isFavorite,
+            );
+
+            // Update finnish word
+            return finnishWord.copyWith(isFavorite: !finnishWord.isFavorite);
+          } else {
+            return finnishWord;
+          }
+        }).toList();
+
+        // Update word with new finnish words
+        return word.copyWith(finnishTranslations: newFinnishWords);
+      }).toList();
+
+      // Update topic with new words
+      return topic.copyWith(words: newWords);
+    }).toList();
+
+    // Update controller state and local db
+    _setTopics(newTopics);
+
+    // Update learn topic
+    _updateLearnTopic(finnishWordId);
   }
 }
