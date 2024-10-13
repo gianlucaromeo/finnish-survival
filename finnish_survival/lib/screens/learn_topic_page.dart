@@ -165,23 +165,34 @@ class LearnTopicPage extends GetView<DbController> {
                     /// BUTTON: NEXT
                     SizedBox(
                       width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          controller.nextLearnEnglishWord();
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.highlightsDarkest,
-                          padding: 16.0.paddingAll,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12.0),
+                      child: Obx(
+                          () {
+                            final complete = controller.isLearnTopicComplete.value!;
+
+                            return ElevatedButton(
+                          onPressed: () {
+                            if (!complete) {
+                              controller.nextLearnEnglishWord();
+                            } else {
+                              Get.back();
+                              controller.resetLearnTopic();
+                            }
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.highlightsDarkest,
+                            padding: 16.0.paddingAll,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
                           ),
-                        ),
-                        child: Text(
-                          "Next",
-                          style: AppFonts.h4.copyWith(
-                            color: AppColors.neutralLightLightest,
+                          child: Text(
+                            complete ? "Done" : "Next",
+                            style: AppFonts.h4.copyWith(
+                              color: AppColors.neutralLightLightest,
+                            ),
                           ),
-                        ),
+                        );
+                          },
                       ),
                     ),
                     24.0.verticalSpace,

@@ -15,6 +15,7 @@ class DbController {
   /* State for LearnTopicPage */
   final Rxn<Topic> learnTopic = Rxn<Topic>();
   final RxnInt learnWordIndex = RxnInt();
+  final RxBool isLearnTopicComplete = false.obs;
 
   void setLearnTopic(Topic topic) {
     learnTopic.value = topic;
@@ -29,10 +30,13 @@ class DbController {
 
     learnTopic.value = null;
     learnWordIndex.value = null;
+    isLearnTopicComplete.value = false;
   }
 
   void nextLearnEnglishWord() {
     learnWordIndex.value = (learnWordIndex.value ?? -1) + 1;
+    isLearnTopicComplete.value =
+        learnWordIndex.value == learnTopic.value!.words.length - 1;
   }
 
   void _updateLearnTopic(String finnishWordId) {
