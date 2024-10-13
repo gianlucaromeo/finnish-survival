@@ -1,11 +1,12 @@
 import 'dart:developer' as dev;
 
-import 'package:finnish_survival/db.dart';
+import 'package:finnish_survival/controllers/db_controller.dart';
 import 'package:finnish_survival/screens/learn_topic_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:finnish_survival/config/theme.dart';
 import 'package:finnish_survival/extensions.dart';
+import 'package:get/get.dart';
 
 class _LearnTopicItem extends StatelessWidget {
   const _LearnTopicItem({
@@ -27,7 +28,6 @@ class _LearnTopicItem extends StatelessWidget {
     return Padding(
       padding: 16.0.paddingOnlyBottom,
       child: Row(
-
         children: [
           /// INDICATOR
           Container(
@@ -103,8 +103,7 @@ class _LearnTopicItem extends StatelessWidget {
   }
 }
 
-
-class LearnTopicsList extends StatelessWidget {
+class LearnTopicsList extends GetView<DbController> {
   const LearnTopicsList({
     super.key,
   });
@@ -113,36 +112,32 @@ class LearnTopicsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: SingleChildScrollView(
-        child: Column(
-          children: [
-            ...List.generate(
-              db.topics.length,
-              (index) {
-                final topic = db.topics[index];
-                return _LearnTopicItem(
-                  title: topic.name,
-                  isComplete: topic.isComplete,
-                  isFavorite: topic.isFavorite,
-                  onTap: () {
-                    dev.log(name: "LearnPage / LearnItem / onTap", "TODO");
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => LearnTopicPage(
-                          topic: topic,
+        child: Obx(
+          () => Column(
+            children: [
+              ...controller.topics.map(
+                (topic) {
+                  return _LearnTopicItem(
+                    title: topic.name,
+                    isComplete: topic.isComplete, // TODO: Implement
+                    isFavorite: topic.isFavorite,
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => LearnTopicPage(
+                            topic: topic,
+                          ),
                         ),
-                      ),
-                    );
-                  },
-                  onFavoriteTap: () {
-                    dev.log(
-                      name: "LearnPage / LearnItem / onFavoriteTap",
-                      "TODO",
-                    );
-                  },
-                );
-              },
-            ),
-          ],
+                      );
+                    },
+                    onFavoriteTap: () {
+                      controller.toggleTopicIsFavorite(topic.id);
+                    },
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

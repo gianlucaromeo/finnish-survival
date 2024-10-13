@@ -38,6 +38,18 @@ class FinnishWord extends Word {
       isFavorite: json['isFavorite'],
     );
   }
+
+  FinnishWord copyWith({
+    String? id,
+    String? word,
+    bool? isFavorite,
+  }) {
+    return FinnishWord(
+      id: id ?? this.id,
+      word: word ?? this.word,
+      isFavorite: isFavorite ?? this.isFavorite,
+    );
+  }
 }
 
 class EnglishWord extends Word {
@@ -61,6 +73,18 @@ class EnglishWord extends Word {
       id: json['id'],
       word: json['word'],
       finnishTranslations: json['finnishTranslations'],
+    );
+  }
+
+  EnglishWord copyWith({
+    String? id,
+    String? word,
+    List<FinnishWord>? finnishTranslations,
+  }) {
+    return EnglishWord(
+      id: id ?? this.id,
+      word: word ?? this.word,
+      finnishTranslations: finnishTranslations ?? this.finnishTranslations,
     );
   }
 }
@@ -97,6 +121,22 @@ class Topic {
       isComplete: json['isComplete'],
     );
   }
+
+  Topic copyWith({
+    String? id,
+    String? name,
+    List<EnglishWord>? words,
+    bool? isFavorite,
+    bool? isComplete,
+  }) {
+    return Topic(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      words: words ?? this.words,
+      isFavorite: isFavorite ?? this.isFavorite,
+      isComplete: isComplete ?? this.isComplete,
+    );
+  }
 }
 
 class UserData {
@@ -122,6 +162,18 @@ class UserData {
       topicsCompletedIds: json['topicsCompletedIds'],
       topicsFavoritesIds: json['topicsFavoritesIds'],
       englishWordsFavoritesIds: json['englishWordsFavoritesIds'],
+    );
+  }
+
+  UserData copyWith({
+    List<String>? topicsCompletedIds,
+    List<String>? topicsFavoritesIds,
+    List<String>? englishWordsFavoritesIds,
+  }) {
+    return UserData(
+      topicsCompletedIds: topicsCompletedIds ?? this.topicsCompletedIds,
+      topicsFavoritesIds: topicsFavoritesIds ?? this.topicsFavoritesIds,
+      englishWordsFavoritesIds: englishWordsFavoritesIds ?? this.englishWordsFavoritesIds,
     );
   }
 }

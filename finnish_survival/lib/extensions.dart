@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 extension DoubleToEdgeInsets on double {
   EdgeInsets get paddingAll => EdgeInsets.all(this);
@@ -18,4 +21,13 @@ extension ListOfDoubleToEdgeInsets on List<double> {
 extension DoubleToSizedBox on double {
   SizedBox get verticalSpace => SizedBox(height: this);
   SizedBox get horizontalSpace => SizedBox(width: this);
+}
+
+extension SharedPreferencesLogs on SharedPreferences {
+  void logAll() {
+    final keysAsString = getKeys()
+        .map((key) => "$key: ${get(key)}") // "key: value"
+        .join(",");
+    log("Shared Preferences: { $keysAsString }\n");
+  }
 }

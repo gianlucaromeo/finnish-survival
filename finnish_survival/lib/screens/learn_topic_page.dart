@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:finnish_survival/config/theme.dart';
 import 'package:finnish_survival/extensions.dart';
-import 'package:finnish_survival/models.dart';
+import 'package:finnish_survival/models/models.dart';
 import 'package:finnish_survival/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -109,7 +109,6 @@ class _LearnTopicPageState extends State<LearnTopicPage> {
       body: Padding(
         padding: AppPadding.scaffoldPadding,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             /// STEPS PROGRESS BAR
             LinearProgressIndicator(
@@ -121,53 +120,62 @@ class _LearnTopicPageState extends State<LearnTopicPage> {
             ),
             32.0.verticalSpace,
 
-            Text(widget.topic.words[_currentStep].word, style: AppFonts.h1),
-            8.0.verticalSpace,
-
             Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    // translations of words
-                    ...widget.topic.words[_currentStep].finnishTranslations.map(
-                      (word) => _LearnTopicItem(
-                        isFavorite: word.isFavorite,
-                        title: word.word,
-                        onFavoriteTap: () {
-                          log(name: "LearnItem / Favorite icon", "Tapped");
-                        },
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(widget.topic.words[_currentStep].word, style: AppFonts.h1),
+                  8.0.verticalSpace,
+
+                  Flexible(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          // translations of words
+                          ...widget.topic.words[_currentStep].finnishTranslations.map(
+                                (word) => _LearnTopicItem(
+                              isFavorite: word.isFavorite,
+                              title: word.word,
+                              onFavoriteTap: () {
+                                log(name: "LearnItem / Favorite icon", "Tapped");
+                              },
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ],
-                ),
-              ),
-            ),
+                  ),
+                  16.0.verticalSpace,
 
-            /// BUTTON: NEXT
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    _currentStep++;
-                  });
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.highlightsDarkest,
-                  padding: 16.0.paddingAll,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0),
+                  /// BUTTON: NEXT
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          _currentStep++;
+                        });
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.highlightsDarkest,
+                        padding: 16.0.paddingAll,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                      ),
+                      child: Text(
+                        "Next",
+                        style: AppFonts.h4.copyWith(
+                          color: AppColors.neutralLightLightest,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-                child: Text(
-                  "Next",
-                  style: AppFonts.h4.copyWith(
-                    color: AppColors.neutralLightLightest,
-                  ),
-                ),
+                  24.0.verticalSpace,
+                ],
               ),
             ),
-            24.0.verticalSpace,
           ],
         ),
       ),
