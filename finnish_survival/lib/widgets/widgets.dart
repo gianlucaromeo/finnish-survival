@@ -2,6 +2,8 @@ export 'app_bar.dart';
 export 'app_bottom_bar.dart';
 export 'favorite_icon_button.dart';
 export 'filter.dart';
+export 'learn_topic_indicator.dart';
+export 'learn_topic_item.dart';
 export 'learn_topic_app_bar.dart';
 export 'learn_finnish_word_item.dart';
 export 'learn_topic_steps_progress_bar.dart';
