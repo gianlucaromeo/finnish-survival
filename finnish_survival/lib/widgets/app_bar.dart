@@ -1,6 +1,4 @@
-import 'dart:developer';
-
-import 'package:finnish_survival/config/theme.dart';
+import 'package:finnish_survival/finnish_survival.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -20,7 +18,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       scrolledUnderElevation: 0.0,
       leading: onBack != null ? IconButton(
         onPressed: () {
-          log(name: "CustomAppBar / Leading Icon Button", "pressed");
           onBack?.call();
         },
         icon: const Icon(Icons.arrow_back_ios_outlined),

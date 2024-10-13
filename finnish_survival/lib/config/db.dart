@@ -1,4 +1,4 @@
-import 'package:finnish_survival/models/models.dart';
+import 'package:finnish_survival/finnish_survival.dart';
 
 class Database {
   final List<Topic> topics;

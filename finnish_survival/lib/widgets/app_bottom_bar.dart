@@ -1,4 +1,4 @@
-import 'package:finnish_survival/config/theme.dart';
+import 'package:finnish_survival/finnish_survival.dart';
 import 'package:flutter/material.dart';
 
 class AppBottomBar extends StatelessWidget {

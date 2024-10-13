@@ -1,4 +1,4 @@
-import 'package:finnish_survival/models/word.dart';
+import 'package:finnish_survival/finnish_survival.dart';
 
 class FinnishWord extends Word {
   final bool isFavorite;

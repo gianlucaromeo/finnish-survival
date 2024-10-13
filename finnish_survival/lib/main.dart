@@ -1,14 +1,7 @@
-import 'package:finnish_survival/config/theme.dart';
-import 'package:finnish_survival/controllers/db_controller.dart';
-import 'package:finnish_survival/extensions.dart';
-import 'package:finnish_survival/models/models.dart';
-import 'package:finnish_survival/screens/learn_page.dart';
-import 'package:finnish_survival/service/db_service.dart';
+import 'package:finnish_survival/finnish_survival.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'db.dart';
 
 final _initialDb = Database(
   topics: [
@@ -99,11 +92,6 @@ final _initialDb = Database(
       ],
     ),
   ],
-  // userData: UserData(
-  //   topicsCompletedIds: [],
-  //   topicsFavoritesIds: ['greetings', 'family'],
-  //   englishWordsFavoritesIds: ['hello', 'mother'],
-  // ),
 );
 
 

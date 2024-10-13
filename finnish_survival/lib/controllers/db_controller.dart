@@ -1,8 +1,4 @@
-import 'dart:developer';
-
-import 'package:finnish_survival/db.dart';
-import 'package:finnish_survival/models/models.dart';
-import 'package:finnish_survival/service/db_service.dart';
+import 'package:finnish_survival/finnish_survival.dart';
 import 'package:get/get.dart';
 
 class DbController {

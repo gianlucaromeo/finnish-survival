@@ -1,5 +1,4 @@
-import 'package:finnish_survival/models/finnish_word.dart';
-import 'package:finnish_survival/models/word.dart';
+import 'package:finnish_survival/finnish_survival.dart';
 
 class EnglishWord extends Word {
   final List<FinnishWord> finnishTranslations;

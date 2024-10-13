@@ -1,10 +1,4 @@
-import 'dart:developer';
-
-import 'package:finnish_survival/config/theme.dart';
-import 'package:finnish_survival/controllers/db_controller.dart';
-import 'package:finnish_survival/extensions.dart';
-import 'package:finnish_survival/models/models.dart';
-import 'package:finnish_survival/widgets/app_bar.dart';
+import 'package:finnish_survival/finnish_survival.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -43,7 +37,6 @@ class _LearnTopicItem extends StatelessWidget {
                     ),
                     child: IconButton(
                       onPressed: () {
-                        log(name: "LearnItem / Favorite Icon", "Tapped");
                         onFavoriteTap.call();
                       },
                       icon: isFavorite
@@ -167,7 +160,7 @@ class LearnTopicPage extends GetView<DbController> {
                       width: double.infinity,
                       child: Obx(
                           () {
-                            final complete = controller.isLearnTopicComplete.value!;
+                            final complete = controller.isLearnTopicComplete.value;
 
                             return ElevatedButton(
                           onPressed: () {

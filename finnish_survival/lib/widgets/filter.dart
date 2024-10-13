@@ -1,7 +1,5 @@
-import 'package:finnish_survival/config/theme.dart';
-import 'package:finnish_survival/extensions.dart';
+import 'package:finnish_survival/finnish_survival.dart';
 import 'package:flutter/material.dart';
-import 'dart:developer' as dev;
 
 class Filter extends StatelessWidget {
   const Filter({
@@ -17,7 +15,6 @@ class Filter extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        dev.log(name: "Filter", "tapped");
         onOpenFilters.call();
       },
       child: Container(

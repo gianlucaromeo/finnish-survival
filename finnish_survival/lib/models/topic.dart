@@ -1,4 +1,4 @@
-import 'package:finnish_survival/models/english_word.dart';
+import 'package:finnish_survival/finnish_survival.dart';
 
 class Topic {
   final String id;
