@@ -12,13 +12,14 @@ class LearnTopicNextWordButton extends GetView<DbController> {
     return SizedBox(
       width: double.infinity,
       child: Obx(() {
-        final complete = controller.isLearnTopicComplete.value;
+        final lastWord = controller.isLastLearnWord.value;
 
         return ElevatedButton(
           onPressed: () {
-            if (!complete) {
+            if (!lastWord) {
               controller.nextLearnEnglishWord();
             } else {
+              controller.setTopicIsComplete(controller.learnTopic.value!.id);
               Get.back();
               controller.resetLearnTopic();
             }
@@ -31,7 +32,7 @@ class LearnTopicNextWordButton extends GetView<DbController> {
             ),
           ),
           child: Text(
-            complete ? "Done" : "Next",
+            lastWord ? "Done" : "Next",
             style: AppFonts.h4.copyWith(
               color: AppColors.neutralLightLightest,
             ),

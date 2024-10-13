@@ -8,10 +8,43 @@ class DbController {
 
   final RxList<Topic> topics = <Topic>[].obs;
 
+  DbController(Database initialDb) {
+    // Load initial db
+    _database = initialDb;
+
+    // Load favorite topics from local db
+    final localTopicFavorites = localDbService.topicFavorites;
+
+    // Load favorite finnish words from local db
+    final localFinnishWordFavorites = localDbService.finnishWordsFavorites;
+
+    // Load completed topics from local db
+    final localTopicCompleted = localDbService.topicsCompleted;
+
+    // Update topics with favorite status
+    final newTopics = _database.topics.map((topic) {
+      return topic.copyWith(
+        isFavorite: localTopicFavorites.contains(topic.id),
+        isComplete: localTopicCompleted.contains(topic.id),
+        words: topic.words.map((word) {
+          return word.copyWith(
+            finnishTranslations: word.finnishTranslations.map((finnishWord) {
+              return finnishWord.copyWith(
+                isFavorite: localFinnishWordFavorites.contains(finnishWord.id),
+              );
+            }).toList(),
+          );
+        }).toList(),
+      );
+    }).toList();
+
+    _setTopics(newTopics);
+  }
+
   /* State for LearnTopicPage */
   final Rxn<Topic> learnTopic = Rxn<Topic>();
   final RxnInt learnWordIndex = RxnInt();
-  final RxBool isLearnTopicComplete = false.obs;
+  final RxBool isLastLearnWord = false.obs;
 
   List<FinnishWord> get currentTranslations {
     return learnTopic.value!.words[learnWordIndex.value!].finnishTranslations;
@@ -30,12 +63,12 @@ class DbController {
 
     learnTopic.value = null;
     learnWordIndex.value = null;
-    isLearnTopicComplete.value = false;
+    isLastLearnWord.value = false;
   }
 
   void nextLearnEnglishWord() {
     learnWordIndex.value = (learnWordIndex.value ?? -1) + 1;
-    isLearnTopicComplete.value =
+    isLastLearnWord.value =
         learnWordIndex.value == learnTopic.value!.words.length - 1;
   }
 
@@ -57,35 +90,6 @@ class DbController {
 
       learnTopic.value = newLearnTopic;
     }
-  }
-
-  DbController(Database initialDb) {
-    // Load initial db
-    _database = initialDb;
-
-    // Load favorite topics from local db
-    final localTopicFavorites = localDbService.topicFavorites;
-
-    // Load favorite finnish words from local db
-    final localFinnishWordFavorites = localDbService.finnishWordsFavorites;
-
-    // Update topics with favorite status
-    final newTopics = _database.topics.map((topic) {
-      return topic.copyWith(
-        isFavorite: localTopicFavorites.contains(topic.id),
-        words: topic.words.map((word) {
-          return word.copyWith(
-            finnishTranslations: word.finnishTranslations.map((finnishWord) {
-              return finnishWord.copyWith(
-                isFavorite: localFinnishWordFavorites.contains(finnishWord.id),
-              );
-            }).toList(),
-          );
-        }).toList(),
-      );
-    }).toList();
-
-    _setTopics(newTopics);
   }
 
   /// Set the updated topics in both local db and controller state.
@@ -152,5 +156,21 @@ class DbController {
 
     // Update learn topic
     _updateLearnTopic(finnishWordId);
+  }
+
+  void setTopicIsComplete(String topicId) {
+    final newTopics = topics.map((topic) {
+      if (topic.id == topicId) {
+        // Update local db
+        localDbService.setTopicCompleted(topicId);
+
+        // Update topic
+        return topic.copyWith(isComplete: true);
+      } else {
+        return topic;
+      }
+    }).toList();
+
+    _setTopics(newTopics);
   }
 }

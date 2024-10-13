@@ -1,6 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class _Keys {
+  static const topicCompleted = 'topicCompleted';
   static const topicsFavorites = 'topicsFavorites';
   static const finnishWordsFavorites = 'finnishWordsFavorites';
 }
@@ -9,6 +10,10 @@ class LocalDbService {
   final SharedPreferences _prefs;
 
   LocalDbService(this._prefs);
+
+  List<String> get topicsCompleted {
+    return _prefs.getStringList(_Keys.topicCompleted) ?? [];
+  }
 
   List<String> get topicFavorites {
     return _prefs.getStringList(_Keys.topicsFavorites) ?? [];
@@ -42,5 +47,12 @@ class LocalDbService {
 
   void setFinnishWordFavorite(String finnishWordId, bool isFavorite) {
     _toggleFavorite(_Keys.finnishWordsFavorites, finnishWordId, isFavorite);
+  }
+
+  void setTopicCompleted(String topicId) {
+    if (!topicsCompleted.contains(topicId)) {
+      final newCompleted = List<String>.from(topicsCompleted)..add(topicId);
+      _prefs.setStringList(_Keys.topicCompleted, newCompleted);
+    }
   }
 }

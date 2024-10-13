@@ -27,7 +27,7 @@ extension SharedPreferencesLogs on SharedPreferences {
   void logAll() {
     final keysAsString = getKeys()
         .map((key) => "$key: ${get(key)}") // "key: value"
-        .join(",");
+        .join(", ");
     log("Shared Preferences: { $keysAsString }\n");
   }
 }
