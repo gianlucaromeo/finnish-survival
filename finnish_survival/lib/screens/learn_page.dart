@@ -7,36 +7,25 @@ class LearnPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /// TOP BAR
       appBar: const CustomAppBar(
         title: "Learn",
       ),
-
-      /// OTHER
       backgroundColor: AppColors.neutralLightLightest,
-
-      /// CONTENT
       body: Padding(
         padding: AppPadding.scaffoldPadding,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// TITLE
             Text(
               "What do you want to learn today?",
               style: AppFonts.h1,
             ),
-
             AppSpace.verticalRegular,
-
-            /// FILTER
             Filter(
               selected: 0,
               onOpenFilters: () {},
             ),
             24.0.verticalSpace,
-
-            /// LIST
             const LearnTopicsList(),
           ],
         ),
