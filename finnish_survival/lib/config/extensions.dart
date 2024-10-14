@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 extension DoubleToEdgeInsets on double {
   EdgeInsets get paddingAll => EdgeInsets.all(this);
   EdgeInsets get paddingOnlyBottom => EdgeInsets.only(bottom: this);
+  EdgeInsets get paddingOnlyLeft => EdgeInsets.only(left: this);
 }
 
 extension ListOfDoubleToEdgeInsets on List<double> {

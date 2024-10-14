@@ -1,15 +1,12 @@
 import 'package:finnish_survival/finnish_survival.dart';
 import 'package:flutter/material.dart';
 
-class LearnPage extends StatelessWidget {
-  const LearnPage({super.key});
+class LearnPageSmall extends StatelessWidget {
+  const LearnPageSmall({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
-        title: "Learn",
-      ),
       backgroundColor: AppColors.neutralLightLightest,
       body: Padding(
         padding: AppPadding.scaffoldPadding,

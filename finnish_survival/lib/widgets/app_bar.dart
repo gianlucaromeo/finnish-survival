@@ -24,6 +24,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         color: AppColors.highlightsDarkest,
       ) : null,
       title: Text(title, style: AppFonts.h4),
+      centerTitle: false,
     );
   }
 

@@ -2,8 +2,8 @@ import 'package:finnish_survival/finnish_survival.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LearnTopicPage extends GetView<DbController> {
-  const LearnTopicPage({super.key});
+class LearnTopicPageSmall extends GetView<DbController> {
+  const LearnTopicPageSmall({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class LearnTopicPage extends GetView<DbController> {
                 ),
               ),
 
-              const Expanded(child: LearnTopicNextWordButton()),
+              const LearnTopicNextWordButton(),
               24.0.verticalSpace,
             ],
           ),

@@ -22,7 +22,11 @@ class LearnTopicsList extends GetView<DbController> {
                       MaterialPageRoute(
                         builder: (context) {
                           controller.setLearnTopic(topic);
-                          return const LearnTopicPage();
+                          return const ResponsiveLayout(
+                            small: LearnTopicPageSmall(),
+                            medium: LearnTopicPageLarge(),
+                            large: LearnTopicPageLarge(),
+                          );
                         },
                       ),
                     );

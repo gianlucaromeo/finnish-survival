@@ -1,2 +1,2 @@
-export 'learn_page.dart';
-export 'learn_topic_page.dart';
+export 'large/large.dart';
+export 'small/small.dart';

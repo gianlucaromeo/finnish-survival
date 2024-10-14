@@ -22,15 +22,15 @@ class AppBottomBar extends StatelessWidget {
       items: const [
         BottomNavigationBarItem(
           icon: SizedBox(child: Icon(Icons.library_books)),
-          label: "Lorem ipsum",
+          label: "Learn",
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.edit_outlined),
-          label: "Lorem ipsum",
+          label: "Practice",
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.settings_outlined),
-          label: "Lorem ipsum",
+          label: "Settings",
         ),
       ],
     );

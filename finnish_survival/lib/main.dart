@@ -116,7 +116,11 @@ class MainApp extends StatelessWidget {
       theme: ThemeData().copyWith(
         textTheme: AppFonts.textTheme,
       ),
-      home: const LearnPage(),
+      home: const ResponsiveLayout(
+        small: LearnPageSmall(),
+        medium: LearnPageLarge(),
+        large: LearnPageLarge(),
+      ),
     );
   }
 }
