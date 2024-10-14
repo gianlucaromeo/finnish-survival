@@ -1,4 +1,5 @@
 import 'package:finnish_survival/finnish_survival.dart';
+import 'package:finnish_survival/models/exercises.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -88,6 +89,37 @@ final _initialDb = Database(
             FinnishWord(id: 'velipoika', word: 'Velipoika'),
             FinnishWord(id: 'veljenpoika', word: 'Veljenpoika'),
           ],
+        ),
+      ],
+    ),
+  ],
+  exercises: [
+    Exercises(
+      id: 'greetings',
+      name: "Greetings",
+      isComplete: false,
+      isFavorite: false,
+      exercises: [
+        Exercise(
+          id: 'greetings_1',
+          category: 'Greetings',
+          question: 'What is the Finnish translation for "Hello"?',
+          options: ['Moi', 'Kiitos', 'Ei'],
+          answer: 'Moi',
+        ),
+        Exercise(
+          id: 'greetings_2',
+          category: 'Greetings',
+          question: 'What is the Finnish translation for "Goodbye"?',
+          options: ['Kiitos', 'Moi moi', 'Ei'],
+          answer: 'Moi moi',
+        ),
+        Exercise(
+          id: 'greetings_3',
+          category: 'Greetings',
+          question: 'What is the Finnish translation for "Thank you"?',
+          options: ['Kiitos', 'Moi', 'Ei'],
+          answer: 'Kiitos',
         ),
       ],
     ),

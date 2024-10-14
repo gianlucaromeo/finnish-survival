@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 class DbController {
   final LocalDbService localDbService = Get.find<LocalDbService>();
 
-  Database _database = Database(topics: []);
+  Database _database = Database(topics: [], exercises: []);
 
   final RxList<Topic> topics = <Topic>[].obs;
 
