@@ -35,7 +35,7 @@ class LearnTopicPage extends GetView<DbController> {
                 ),
               ),
 
-              const LearnTopicNextWordButton(),
+              const Expanded(child: LearnTopicNextWordButton()),
               24.0.verticalSpace,
             ],
           ),

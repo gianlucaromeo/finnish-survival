@@ -9,33 +9,31 @@ class LearnTopicsList extends GetView<DbController> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: SingleChildScrollView(
-        child: Obx(
-          () => Column(
-            children: [
-              ...controller.topics.map(
-                (topic) {
-                  return LearnTopicItem(
-                    topic: topic,
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            controller.setLearnTopic(topic);
-                            return const LearnTopicPage();
-                          },
-                        ),
-                      );
-                    },
-                    onFavoriteTap: () {
-                      controller.toggleTopicIsFavorite(topic.id);
-                    },
-                  );
-                },
-              ),
-            ],
-          ),
+    return SingleChildScrollView(
+      child: Obx(
+        () => Column(
+          children: [
+            ...controller.topics.map(
+              (topic) {
+                return LearnTopicItem(
+                  topic: topic,
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          controller.setLearnTopic(topic);
+                          return const LearnTopicPage();
+                        },
+                      ),
+                    );
+                  },
+                  onFavoriteTap: () {
+                    controller.toggleTopicIsFavorite(topic.id);
+                  },
+                );
+              },
+            ),
+          ],
         ),
       ),
     );
