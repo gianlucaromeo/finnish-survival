@@ -25,7 +25,7 @@ class LearnPageSmall extends StatelessWidget {
             ),
 
             24.0.verticalSpace,
-            const LearnTopicsList(),
+            const Expanded(child: LearnTopicsList()),
           ],
         ),
       ),
