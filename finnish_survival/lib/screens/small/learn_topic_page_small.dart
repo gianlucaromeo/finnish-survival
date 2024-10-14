@@ -14,30 +14,30 @@ class LearnTopicPageSmall extends GetView<DbController> {
         backgroundColor: AppColors.neutralLightLightest,
         body: Padding(
           padding: AppPadding.scaffoldPadding,
-          child: Column(
-            children: [
-              const LearnTopicStepsProgressBar(),
-              32.0.verticalSpace,
-
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const LearnTopicWordTitle(),
-                    8.0.verticalSpace,
-
-                    const Flexible(
-                      child: LearnTopicFinnishWords(),
-                    ),
-                    24.0.verticalSpace,
-                  ],
+          child: SizedBox(
+            width: 1250.0,
+            child: Column(
+              children: [
+                const LearnTopicStepsProgressBar(),
+                32.0.verticalSpace,
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const LearnTopicWordTitle(),
+                      8.0.verticalSpace,
+                      const Flexible(
+                        child: LearnTopicFinnishWords(),
+                      ),
+                      24.0.verticalSpace,
+                    ],
+                  ),
                 ),
-              ),
-
-              const LearnTopicNextWordButton(),
-              24.0.verticalSpace,
-            ],
+                const LearnTopicNextWordButton(),
+                24.0.verticalSpace,
+              ],
+            ),
           ),
         ),
       ),

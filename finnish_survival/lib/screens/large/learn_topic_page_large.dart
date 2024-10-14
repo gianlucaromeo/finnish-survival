@@ -14,36 +14,41 @@ class LearnTopicPageLarge extends GetView<DbController> {
         backgroundColor: AppColors.neutralLightLightest,
         body: Padding(
           padding: AppPadding.scaffoldPadding,
-          child: Column(
-            children: [
-              const LearnTopicStepsProgressBar(),
-              64.0.verticalSpace,
-
-              Flexible(
-                child: SizedBox(
-                  width: 650.0,
-                  height: 400.0,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const LearnTopicWordTitle(),
-                      8.0.verticalSpace,
-
-                      const Flexible(
-                        child: LearnTopicFinnishWords(),
-                      ),
-                      24.0.verticalSpace,
-                    ],
+          child: Center(
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(
+                    width: 600,
+                    child: LearnTopicStepsProgressBar(),
                   ),
-                ),
-              ),
-              64.0.verticalSpace,
-
-              SizedBox(width: 350.0, height: 50.0, child: const LearnTopicNextWordButton()),
-              24.0.verticalSpace,
-            ]
+                  64.0.verticalSpace,
+                  Flexible(
+                    child: SizedBox(
+                      width: 650.0,
+                      height: 400.0,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const LearnTopicWordTitle(),
+                          8.0.verticalSpace,
+                          const Flexible(
+                            child: LearnTopicFinnishWords(),
+                          ),
+                          24.0.verticalSpace,
+                        ],
+                      ),
+                    ),
+                  ),
+                  64.0.verticalSpace,
+                  const SizedBox(
+                      width: 350.0,
+                      height: 50.0,
+                      child: LearnTopicNextWordButton()),
+                  24.0.verticalSpace,
+                ]),
           ),
         ),
       ),
