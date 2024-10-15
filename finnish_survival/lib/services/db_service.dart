@@ -4,6 +4,9 @@ class _Keys {
   static const topicCompleted = 'topicCompleted';
   static const topicsFavorites = 'topicsFavorites';
   static const finnishWordsFavorites = 'finnishWordsFavorites';
+
+  static const topicExercisesCompleted = 'topicExercisesCompleted';
+  static const topicExercisesFavorites = 'topicExercisesFavorites';
 }
 
 class LocalDbService {
@@ -21,6 +24,14 @@ class LocalDbService {
 
   List<String> get finnishWordsFavorites {
     return _prefs.getStringList(_Keys.finnishWordsFavorites) ?? [];
+  }
+
+  List<String> get topicExercisesCompleted {
+    return _prefs.getStringList(_Keys.topicExercisesCompleted) ?? [];
+  }
+
+  List<String> get topicExercisesFavorites {
+    return _prefs.getStringList(_Keys.topicExercisesFavorites) ?? [];
   }
 
   /// Toggle favorite status for a topic or a finnish word.
@@ -47,6 +58,14 @@ class LocalDbService {
 
   void setFinnishWordFavorite(String finnishWordId, bool isFavorite) {
     _toggleFavorite(_Keys.finnishWordsFavorites, finnishWordId, isFavorite);
+  }
+
+  void setTopicExerciseCompleted(String topicExerciseId) {
+    _toggleFavorite(_Keys.topicExercisesCompleted, topicExerciseId, true);
+  }
+
+  void setTopicExerciseFavorite(String topicExerciseId, bool isFavorite) {
+    _toggleFavorite(_Keys.topicExercisesFavorites, topicExerciseId, isFavorite);
   }
 
   void setTopicCompleted(String topicId) {

@@ -1,7 +1,8 @@
 import 'package:finnish_survival/finnish_survival.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class AppBottomBar extends StatelessWidget {
+class AppBottomBar extends GetView<NavigationController> {
   const AppBottomBar({
     super.key,
   });
@@ -9,6 +10,8 @@ class AppBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      currentIndex: controller.currentIndex,
+      onTap: controller.setCurrentIndex,
       backgroundColor: AppColors.neutralLightLightest,
       elevation: 0.0,
       /// SELECTED

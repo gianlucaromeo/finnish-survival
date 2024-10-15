@@ -1,13 +1,13 @@
 import 'package:finnish_survival/finnish_survival.dart';
 import 'package:flutter/material.dart';
 
-class LearnTopicIndicator extends StatelessWidget {
-  const LearnTopicIndicator({
+class StatusIndicator extends StatelessWidget {
+  const StatusIndicator({
     super.key,
-    required this.topic,
+    required this.isComplete,
   });
 
-  final Topic topic;
+  final bool isComplete;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class LearnTopicIndicator extends StatelessWidget {
       width: 8.0,
       height: 50.0,
       decoration: BoxDecoration(
-        color: topic.isComplete
+        color: isComplete
             ? AppColors.highlightsDarkest
             : AppColors.neutralLightMedium,
         borderRadius: BorderRadius.circular(4.0),

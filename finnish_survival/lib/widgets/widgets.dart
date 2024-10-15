@@ -13,3 +13,4 @@ export 'learn_topic_finnish_words.dart';
 export 'learn_topics_list.dart';
 export 'learn_topic_next_word_button.dart';
 export 'responsive_layout.dart';
+export 'topic_exercise_item.dart';

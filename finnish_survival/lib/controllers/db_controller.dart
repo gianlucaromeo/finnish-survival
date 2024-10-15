@@ -4,9 +4,10 @@ import 'package:get/get.dart';
 class DbController {
   final LocalDbService localDbService = Get.find<LocalDbService>();
 
-  Database _database = Database(topics: [], exercises: []);
+  Database _database = Database(topics: [], topicExercises: []);
 
   final RxList<Topic> topics = <Topic>[].obs;
+  final RxList<TopicExercise> topicExercises = <TopicExercise>[].obs;
 
   DbController(Database initialDb) {
     // Load initial db
@@ -39,6 +40,16 @@ class DbController {
     }).toList();
 
     _setTopics(newTopics);
+
+    // Update topic exercises from database
+    final newTopicExercises = _database.topicExercises.map((topicExercise) {
+      return topicExercise.copyWith(
+        isFavorite: localDbService.topicExercisesFavorites.contains(topicExercise.id),
+        isComplete: localDbService.topicExercisesCompleted.contains(topicExercise.id),
+      );
+    }).toList();
+
+    _setTopicExercises(newTopicExercises);
   }
 
   /* State for LearnTopicPage */
@@ -101,6 +112,16 @@ class DbController {
     // Update controller state
     topics.clear();
     topics.addAll(newTopics);
+  }
+
+  void _setTopicExercises(List<TopicExercise> newTopicExercises) {
+    // Update local db
+    _database.topicExercises.clear();
+    _database.topicExercises.addAll(newTopicExercises);
+
+    // Update controller state
+    topicExercises.clear();
+    topicExercises.addAll(newTopicExercises);
   }
 
   void toggleTopicIsFavorite(String topicId) {

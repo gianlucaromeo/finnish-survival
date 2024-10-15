@@ -1,5 +1,4 @@
 import 'package:finnish_survival/finnish_survival.dart';
-import 'package:finnish_survival/models/exercises.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -93,8 +92,8 @@ final _initialDb = Database(
       ],
     ),
   ],
-  exercises: [
-    Exercises(
+  topicExercises: [
+    TopicExercise(
       id: 'greetings',
       name: "Greetings",
       isComplete: false,
@@ -135,6 +134,7 @@ void main() async {
 
   Get.lazyPut(() => LocalDbService(sharedPreferences));
   Get.lazyPut(() => DbController(_initialDb));
+  Get.lazyPut(() => NavigationController());
 
   runApp(const MainApp());
 }
@@ -148,6 +148,18 @@ class MainApp extends StatelessWidget {
       theme: ThemeData().copyWith(
         textTheme: AppFonts.textTheme,
       ),
+      routes: {
+        '/learn': (context) => const ResponsiveLayout(
+          small: LearnPageSmall(),
+          medium: LearnPageLarge(),
+          large: LearnPageLarge(),
+        ),
+        '/exercises': (context) => const ResponsiveLayout(
+          small: ExercisesPageSmall(),
+          medium: ExercisesPageSmall(),
+          large: ExercisesPageSmall(),
+        ),
+      },
       home: const ResponsiveLayout(
         small: LearnPageSmall(),
         medium: LearnPageLarge(),

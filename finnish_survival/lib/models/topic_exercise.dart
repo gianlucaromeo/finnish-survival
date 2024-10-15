@@ -1,13 +1,13 @@
 import 'package:finnish_survival/finnish_survival.dart';
 
-class Exercises {
+class TopicExercise {
   final String id;
   final String name;
   final List<Exercise> exercises;
   final bool isFavorite;
   final bool isComplete;
 
-  Exercises({
+  TopicExercise({
     required this.id,
     required this.name,
     required this.exercises,
@@ -23,8 +23,8 @@ class Exercises {
     'isComplete': isComplete,
   };
 
-  factory Exercises.fromJson(Map<String, dynamic> json) {
-    return Exercises(
+  factory TopicExercise.fromJson(Map<String, dynamic> json) {
+    return TopicExercise(
       id: json['id'],
       name: json['name'],
       exercises: json['words'],
@@ -33,14 +33,14 @@ class Exercises {
     );
   }
 
-  Exercises copyWith({
+  TopicExercise copyWith({
     String? id,
     String? name,
     List<Exercise>? exercises,
     bool? isFavorite,
     bool? isComplete,
   }) {
-    return Exercises(
+    return TopicExercise(
       id: id ?? this.id,
       name: name ?? this.name,
       exercises: exercises ?? this.exercises,

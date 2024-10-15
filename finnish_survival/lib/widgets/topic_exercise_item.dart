@@ -1,15 +1,15 @@
 import 'package:finnish_survival/finnish_survival.dart';
 import 'package:flutter/material.dart';
 
-class LearnTopicItem extends StatelessWidget {
-  const LearnTopicItem({
+class TopicExerciseItem extends StatelessWidget {
+  const TopicExerciseItem({
     super.key,
     required this.topic,
     required this.onFavoriteTap,
     required this.onTap,
   });
 
-  final Topic topic;
+  final TopicExercise topic;
   final Function onFavoriteTap;
   final Function onTap;
 

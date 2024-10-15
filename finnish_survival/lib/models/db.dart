@@ -1,34 +1,34 @@
 import 'package:finnish_survival/finnish_survival.dart';
-import 'package:finnish_survival/models/exercises.dart';
 
 class Database {
   final List<Topic> topics;
-  final List<Exercises> exercises;
+  final List<TopicExercise> topicExercises;
 
   Database({
     required this.topics,
-    required this.exercises,
+    required this.topicExercises,
   });
 
   Map<String, dynamic> toJson() => {
     'topics': topics,
+    'topicExercises': topicExercises,
     //'userData': userData,
   };
 
   factory Database.fromJson(Map<String, dynamic> json) {
     return Database(
       topics: json['topics'],
-      exercises: json['exercises'],
+      topicExercises: json['topicExercises'],
     );
   }
 
   Database copyWith({
     List<Topic>? topics,
-    List<Exercises>? exercises,
+    List<TopicExercise>? topicExercises,
   }) {
     return Database(
       topics: topics ?? this.topics,
-      exercises: exercises ?? this.exercises,
+      topicExercises: topicExercises ?? this.topicExercises,
     );
   }
 }
