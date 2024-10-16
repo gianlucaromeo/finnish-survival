@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:finnish_survival/finnish_survival.dart';
 import 'package:get/get.dart';
 

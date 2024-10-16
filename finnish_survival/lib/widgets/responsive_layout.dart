@@ -4,12 +4,12 @@ class ResponsiveLayout extends StatelessWidget {
   const ResponsiveLayout({
     super.key,
     required this.small,
-    required this.medium,
+    this.medium,
     required this.large,
   });
 
   final Widget small;
-  final Widget medium;
+  final Widget? medium;
   final Widget large;
 
   @override
@@ -19,7 +19,7 @@ class ResponsiveLayout extends StatelessWidget {
         if (constraints.maxWidth > 1200) {
           return large;
         } else if (constraints.maxWidth > 800) {
-          return medium;
+          return medium ?? large;
         }
         return small;
       },

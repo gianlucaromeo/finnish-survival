@@ -125,7 +125,6 @@ final _initialDb = Database(
   ],
 );
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -134,9 +133,9 @@ void main() async {
 
   Get.lazyPut(() => LocalDbService(sharedPreferences));
   Get.lazyPut(() => FakeDatabaseService(_initialDb));
-  Get.lazyPut(() => LearnPageController());
-  Get.lazyPut(() => ExercisesPageController());
   Get.lazyPut(() => NavigationController());
+  Get.lazyPut(() => LearnPageController(), fenix: true);
+  Get.lazyPut(() => ExercisesPageController(), fenix: true);
 
   runApp(const MainApp());
 }
@@ -150,18 +149,24 @@ class MainApp extends StatelessWidget {
       theme: ThemeData().copyWith(
         textTheme: AppFonts.textTheme,
       ),
-      routes: {
-        '/learn': (context) => const ResponsiveLayout(
-          small: LearnPageSmall(),
-          medium: LearnPageLarge(),
-          large: LearnPageLarge(),
+      getPages: [
+        GetPage(
+          name: '/learn',
+          page: () => const ResponsiveLayout(
+            small: LearnPageSmall(),
+            large: LearnPageLarge(),
+          ),
+          transition: Transition.noTransition,
         ),
-        '/exercises': (context) => const ResponsiveLayout(
-          small: ExercisesPageSmall(),
-          medium: ExercisesPageSmall(),
-          large: ExercisesPageSmall(),
+        GetPage(
+          name: '/exercises',
+          page: () => const ResponsiveLayout(
+            small: ExercisesPageSmall(),
+            large: ExercisesPageLarge(),
+          ),
+          transition: Transition.noTransition,
         ),
-      },
+      ],
       home: const ResponsiveLayout(
         small: LearnPageSmall(),
         medium: LearnPageLarge(),

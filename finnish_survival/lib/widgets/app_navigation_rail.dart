@@ -1,13 +1,15 @@
-import 'package:finnish_survival/config/config.dart';
+import 'package:finnish_survival/finnish_survival.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class AppNavigationRail extends StatelessWidget {
+class AppNavigationRail extends GetView<NavigationController> {
   const AppNavigationRail({super.key});
 
   @override
   Widget build(BuildContext context) {
     return NavigationRail(
-      selectedIndex: 0,
+      selectedIndex: controller.currentIndex,
+      onDestinationSelected: controller.setCurrentIndex,
       extended: true,
       backgroundColor: AppColors.neutralLightLight,
       selectedLabelTextStyle: AppFonts.bodyL.copyWith(

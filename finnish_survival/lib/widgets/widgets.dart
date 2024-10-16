@@ -2,6 +2,7 @@ export 'app_bar.dart';
 export 'app_bottom_bar.dart';
 export 'app_navigation_rail.dart';
 export 'exercises_list.dart';
+export 'exercises_page_app_bar.dart';
 export 'favorite_icon_button.dart';
 export 'filter.dart';
 export 'learn_topic_indicator.dart';

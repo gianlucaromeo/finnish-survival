@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class NavigationController {
-  final routes = [
+  final _routes = [
     '/learn',
     '/exercises',
     '/settings',
@@ -13,10 +13,10 @@ class NavigationController {
 
   void setCurrentIndex(int index) {
     _currentIndex = index;
-    navigateTo(routes[index]);
+    _navigateTo(_routes[index]);
   }
 
-  void navigateTo(String route) {
-    Get.toNamed(route);
+  void _navigateTo(String route) {
+    Get.offAndToNamed(route);
   }
 }
