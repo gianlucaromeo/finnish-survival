@@ -2,7 +2,7 @@ import 'package:finnish_survival/finnish_survival.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LearnTopicNextWordButton extends GetView<DbController> {
+class LearnTopicNextWordButton extends GetView<LearnPageController> {
   const LearnTopicNextWordButton({
     super.key,
   });
@@ -12,16 +12,16 @@ class LearnTopicNextWordButton extends GetView<DbController> {
     return SizedBox(
       width: double.infinity,
       child: Obx(() {
-        final lastWord = controller.isLastLearnWord.value;
+        final lastWord = controller.isLastWord.value;
 
         return ElevatedButton(
           onPressed: () {
             if (!lastWord) {
-              controller.nextLearnEnglishWord();
+              controller.nextWord();
             } else {
-              controller.setTopicIsComplete(controller.learnTopic.value!.id);
+              controller.markTopicAsComplete(controller.currentTopic.value!.id);
               Get.back();
-              controller.resetLearnTopic();
+              controller.resetTopic();
             }
           },
           style: ElevatedButton.styleFrom(

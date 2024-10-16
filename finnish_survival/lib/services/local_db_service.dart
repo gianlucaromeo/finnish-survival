@@ -1,7 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class _Keys {
-  static const topicCompleted = 'topicCompleted';
+  static const topicCompleted = 'topicCompleted'; // TODO Fix typo without losing data: "topicsCompleted"
   static const topicsFavorites = 'topicsFavorites';
   static const finnishWordsFavorites = 'finnishWordsFavorites';
 
@@ -18,6 +18,7 @@ class LocalDbService {
     return _prefs.getStringList(_Keys.topicCompleted) ?? [];
   }
 
+  // TODO: Fix typo without losing data: "get topicsFavorites"
   List<String> get topicFavorites {
     return _prefs.getStringList(_Keys.topicsFavorites) ?? [];
   }
@@ -32,6 +33,26 @@ class LocalDbService {
 
   List<String> get topicExercisesFavorites {
     return _prefs.getStringList(_Keys.topicExercisesFavorites) ?? [];
+  }
+
+  bool isTopicFavorite(String topicId) {
+    return topicFavorites.contains(topicId);
+  }
+
+  bool isTopicCompleted(String topicId) {
+    return topicsCompleted.contains(topicId);
+  }
+
+  bool isFinnishWordFavorite(String finnishWordId) {
+    return finnishWordsFavorites.contains(finnishWordId);
+  }
+
+  bool isTopicExerciseFavorite(String topicExerciseId) {
+    return topicExercisesFavorites.contains(topicExerciseId);
+  }
+
+  bool isTopicExerciseCompleted(String topicExerciseId) {
+    return topicExercisesCompleted.contains(topicExerciseId);
   }
 
   /// Toggle favorite status for a topic or a finnish word.
@@ -52,6 +73,7 @@ class LocalDbService {
     }
   }
 
+  // TODO: Fix typo without losing data: "setTopicsFavorite"
   void setTopicFavorite(String topicId, bool isFavorite) {
     _toggleFavorite(_Keys.topicsFavorites, topicId, isFavorite);
   }

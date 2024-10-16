@@ -2,7 +2,7 @@ import 'package:finnish_survival/finnish_survival.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LearnTopicFinnishWords extends GetView<DbController> {
+class LearnTopicFinnishWords extends GetView<LearnPageController> {
   const LearnTopicFinnishWords({
     super.key,
   });

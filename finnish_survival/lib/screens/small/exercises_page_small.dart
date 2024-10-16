@@ -39,7 +39,7 @@ class ExercisesPageSmall extends StatelessWidget {
   }
 }
 
-class ExercisesList extends GetView<DbController> {
+class ExercisesList extends GetView<ExercisesPageController> {
   const ExercisesList({
     super.key,
   });
@@ -49,7 +49,7 @@ class ExercisesList extends GetView<DbController> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          ...controller.topicExercises.map(
+          ...controller.fakeDatabase.value.topicExercises.map(
             (topicExercise) {
               return TopicExerciseItem(
                 topic: topicExercise,

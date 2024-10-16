@@ -2,7 +2,7 @@ import 'package:finnish_survival/finnish_survival.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LearnTopicsList extends GetView<DbController> {
+class LearnTopicsList extends GetView<LearnPageController> {
   const LearnTopicsList({
     super.key,
   });
@@ -13,7 +13,7 @@ class LearnTopicsList extends GetView<DbController> {
       child: Obx(
         () => Column(
           children: [
-            ...controller.topics.map(
+            ...controller.database.value.topics.map(
               (topic) {
                 return LearnTopicItem(
                   topic: topic,
@@ -21,7 +21,7 @@ class LearnTopicsList extends GetView<DbController> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) {
-                          controller.setLearnTopic(topic);
+                          controller.setTopic(topic);
                           return const ResponsiveLayout(
                             small: LearnTopicPageSmall(),
                             medium: LearnTopicPageLarge(),

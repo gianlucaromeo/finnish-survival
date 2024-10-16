@@ -2,7 +2,7 @@ import 'package:finnish_survival/finnish_survival.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LearnTopicPageLarge extends GetView<DbController> {
+class LearnTopicPageLarge extends GetView<LearnPageController> {
   const LearnTopicPageLarge({super.key});
 
   @override

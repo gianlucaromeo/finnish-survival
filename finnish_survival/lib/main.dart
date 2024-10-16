@@ -133,7 +133,9 @@ void main() async {
   sharedPreferences.logAll();
 
   Get.lazyPut(() => LocalDbService(sharedPreferences));
-  Get.lazyPut(() => DbController(_initialDb));
+  Get.lazyPut(() => FakeDatabaseService(_initialDb));
+  Get.lazyPut(() => LearnPageController());
+  Get.lazyPut(() => ExercisesPageController());
   Get.lazyPut(() => NavigationController());
 
   runApp(const MainApp());
