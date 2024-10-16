@@ -47,22 +47,24 @@ class ExercisesList extends GetView<ExercisesPageController> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        children: [
-          ...controller.fakeDatabase.value.topicExercises.map(
-            (topicExercise) {
-              return TopicExerciseItem(
-                topic: topicExercise,
-                onFavoriteTap: () {
-                  // TODO - Implement favorite functionality
-                },
-                onTap: () {
-                  // TODO - Navigate to the exercise page
-                },
-              );
-            },
-          ),
-        ],
+      child: Obx(
+        () => Column(
+          children: [
+            ...controller.database.value.topicExercises.map(
+              (topicExercise) {
+                return TopicExerciseItem(
+                  topic: topicExercise,
+                  onFavoriteTap: () {
+                    controller.toggleTopicExerciseIsFavorite(topicExercise.id);
+                  },
+                  onTap: () {
+                    // TODO - Navigate to the exercise page
+                  },
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

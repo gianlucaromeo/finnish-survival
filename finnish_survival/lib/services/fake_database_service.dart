@@ -55,7 +55,7 @@ class FakeDatabaseService {
         fakeDatabase.value.copyWith(topicExercises: newTopicExercises);
   }
 
-  /* OPERATIONS */
+  /* OPERATIONS - TOPICS LEARN */
 
   void toggleFinnishWordIsFavorite(String finnishWordId) {
     final newTopics = fakeDatabase.value.topics.map((topic) {
@@ -78,11 +78,9 @@ class FakeDatabaseService {
   }
 
   void toggleTopicIsFavorite(String topicId) {
-    log(name: 'FakeDatabaseService', 'toggleTopicIsFavorite: $topicId');
     final newTopics = fakeDatabase.value.topics.map((topic) {
       if (topic.id == topicId) {
         final newIsFavorite = !topic.isFavorite;
-        log(name: 'FakeDatabaseService', '$topicId newFavorite: $newIsFavorite');
         _localDbService.setTopicFavorite(topicId, newIsFavorite);
         return topic.copyWith(isFavorite: newIsFavorite);
       } else {
@@ -105,5 +103,21 @@ class FakeDatabaseService {
     }).toList();
 
     _setTopics(newTopics);
+  }
+
+  /* OPERATIONS - TOPIC EXERCISES */
+
+  void toggleTopicExerciseIsFavorite(String topicId) {
+    final newTopicExercises = fakeDatabase.value.topicExercises.map((topicExercise) {
+      if (topicExercise.id == topicId) {
+        final newIsFavorite = !topicExercise.isFavorite;
+        _localDbService.setTopicExerciseFavorite(topicId, newIsFavorite);
+        return topicExercise.copyWith(isFavorite: newIsFavorite);
+      } else {
+        return topicExercise;
+      }
+    }).toList();
+
+    _setTopicExercises(newTopicExercises);
   }
 }

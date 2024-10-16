@@ -8,7 +8,14 @@ class ExercisesPageController extends GetxController {
   final RxnInt _currentExerciseIndex = RxnInt();
   final RxBool _isLastExercise = false.obs;
 
-  Rx<Database> get fakeDatabase => _fakeDatabaseService.fakeDatabase;
+  Rxn<TopicExercise> get currentTopicExercise => _currentTopicExercise;
+  RxnInt get currentExerciseIndex => _currentExerciseIndex;
+  RxBool get isLastExercise => _isLastExercise;
+  Rx<Database> get database => _fakeDatabaseService.fakeDatabase;
+
+  void toggleTopicExerciseIsFavorite(String topicId) {
+    _fakeDatabaseService.toggleTopicExerciseIsFavorite(topicId);
+  }
 
   void nextExercise() {
     _currentExerciseIndex.value = (_currentExerciseIndex.value ?? -1) + 1;
