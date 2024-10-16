@@ -131,9 +131,9 @@ void main() async {
   final sharedPreferences = await SharedPreferences.getInstance();
   sharedPreferences.logAll();
 
+  Get.put(NavigationController(), permanent: true);
   Get.lazyPut(() => LocalDbService(sharedPreferences), fenix: true);
   Get.lazyPut(() => FakeDatabaseService(_initialDb), fenix: true);
-  Get.lazyPut(() => NavigationController(), fenix: true);
   Get.lazyPut(() => LearnPageController(), fenix: true);
   Get.lazyPut(() => ExercisesPageController(), fenix: true);
 

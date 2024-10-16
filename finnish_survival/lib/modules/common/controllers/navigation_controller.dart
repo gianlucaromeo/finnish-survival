@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class NavigationController extends GetxController {
+class NavigationController {
   final _routes = [
     '/learn',
     '/exercises',
