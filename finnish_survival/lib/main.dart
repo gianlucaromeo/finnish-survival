@@ -161,10 +161,10 @@ void main() async {
   sharedPreferences.logAll();
 
   Get.put(NavigationController(), permanent: true);
-  Get.lazyPut(() => LocalDbService(sharedPreferences), fenix: true);
-  Get.lazyPut(() => FakeDatabaseService(_initialDb), fenix: true);
-  Get.lazyPut(() => LearnPageController(), fenix: true);
-  Get.lazyPut(() => ExercisesPageController(), fenix: true);
+  Get.put(LocalDbService(sharedPreferences), permanent: true);
+  Get.put(FakeDatabaseService(_initialDb), permanent: true);
+  Get.put(LearnPageController(), permanent: true);
+  Get.put(ExercisesPageController(), permanent: true);
 
   runApp(const MainApp());
 }

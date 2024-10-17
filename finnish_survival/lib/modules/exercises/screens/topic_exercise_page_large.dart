@@ -8,41 +8,44 @@ class TopicExercisePageLarge extends GetView<ExercisesPageController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const TopicExerciseAppBar(),
-      backgroundColor: AppColors.neutralLightLightest,
-      body: Padding(
-        padding: AppPadding.scaffoldPadding,
-        child: Center(
-          child: Column(
-            children: [
-              const SizedBox(
-                width: 600.0,
-                child: TopicExerciseStepsProgressBar(),
-              ),
-              64.0.verticalSpace,
-              Flexible(
-                child: SizedBox(
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        appBar: const TopicExerciseAppBar(),
+        backgroundColor: AppColors.neutralLightLightest,
+        body: Padding(
+          padding: AppPadding.scaffoldPadding,
+          child: Center(
+            child: Column(
+              children: [
+                const SizedBox(
                   width: 600.0,
-                  height: 400.0,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const TopicExerciseQuestion(),
-                      8.0.verticalSpace,
+                  child: TopicExerciseStepsProgressBar(),
+                ),
+                64.0.verticalSpace,
+                Flexible(
+                  child: SizedBox(
+                    width: 600.0,
+                    height: 400.0,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const TopicExerciseQuestion(),
+                        8.0.verticalSpace,
 
-                      TopicExerciseForm(),
+                        TopicExerciseForm(),
 
-                      24.0.verticalSpace,
-                    ],
+                        24.0.verticalSpace,
+                      ],
+                    ),
                   ),
                 ),
-              ),
-             // const TopicExerciseNextButton(),
-              24.0.verticalSpace,
-            ],
+               // const TopicExerciseNextButton(),
+                24.0.verticalSpace,
+              ],
+            ),
           ),
         ),
       ),

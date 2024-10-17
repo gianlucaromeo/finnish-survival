@@ -8,30 +8,33 @@ class TopicExercisePageSmall extends GetView<ExercisesPageController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const TopicExerciseAppBar(),
-      backgroundColor: AppColors.neutralLightLightest,
-      body: Padding(
-        padding: AppPadding.scaffoldPadding,
-        child: Column(
-          children: [
-            const TopicExerciseStepsProgressBar(),
-            32.0.verticalSpace,
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const TopicExerciseQuestion(),
-                  8.0.verticalSpace,
-                  TopicExerciseForm(),
-                  24.0.verticalSpace,
-                ],
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        appBar: const TopicExerciseAppBar(),
+        backgroundColor: AppColors.neutralLightLightest,
+        body: Padding(
+          padding: AppPadding.scaffoldPadding,
+          child: Column(
+            children: [
+              const TopicExerciseStepsProgressBar(),
+              32.0.verticalSpace,
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const TopicExerciseQuestion(),
+                    8.0.verticalSpace,
+                    TopicExerciseForm(),
+                    24.0.verticalSpace,
+                  ],
+                ),
               ),
-            ),
-           // const TopicExerciseNextButton(),
-            24.0.verticalSpace,
-          ],
+             // const TopicExerciseNextButton(),
+              24.0.verticalSpace,
+            ],
+          ),
         ),
       ),
     );

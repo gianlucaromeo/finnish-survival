@@ -7,44 +7,47 @@ class ExercisesPageLarge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.neutralLightLightest,
-      body: Center(
-        child: SizedBox(
-          width: 1250.0,
-          child: Row(
-            children: [
-              const AppNavigationRail(),
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        backgroundColor: AppColors.neutralLightLightest,
+        body: Center(
+          child: SizedBox(
+            width: 1250.0,
+            child: Row(
+              children: [
+                const AppNavigationRail(),
 
-              Expanded(
-                child: Padding(
-                  padding: AppPadding.scaffoldPadding,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        width: 620.0,
-                        child: Center(
-                          child: Image.asset(
-                            'assets/practice.jpg',
-                            width: double.infinity,
-                            fit: BoxFit.cover,
+                Expanded(
+                  child: Padding(
+                    padding: AppPadding.scaffoldPadding,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.height * 0.4,
+                          child: Center(
+                            child: Image.asset(
+                              'assets/practice.jpg',
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
-                      ),
 
-                      Text(
-                        "Ready to test your Finnish skills?",
-                        style: AppFonts.h1,
-                      ),
+                        Text(
+                          "Ready to test your Finnish skills?",
+                          style: AppFonts.h1,
+                        ),
 
-                      24.0.verticalSpace,
-                      const Expanded(child: ExercisesList()),
-                    ],
+                        24.0.verticalSpace,
+                        const Expanded(child: ExercisesList()),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

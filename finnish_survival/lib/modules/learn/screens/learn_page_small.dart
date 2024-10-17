@@ -16,7 +16,7 @@ class LearnPageSmall extends StatelessWidget {
             children: [
               Center(
                 child: SizedBox(
-                  width: 520.0,
+                  width: MediaQuery.of(context).size.height * 0.5,
                   child: Image.asset(
                     'assets/learn.jpg',
                     width: double.infinity,

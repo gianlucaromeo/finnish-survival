@@ -7,40 +7,43 @@ class ExercisesPageSmall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.neutralLightLightest,
-      body: SafeArea(
-        child: Padding(
-          padding: AppPadding.scaffoldPadding,
-          child: Column(
-            children: [
-              Center(
-                child: SizedBox(
-                  width: 620.0,
-                  child: Image.asset(
-                    'assets/practice.jpg',
-                    width: double.infinity,
-                    fit: BoxFit.cover,
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        backgroundColor: AppColors.neutralLightLightest,
+        body: SafeArea(
+          child: Padding(
+            padding: AppPadding.scaffoldPadding,
+            child: Column(
+              children: [
+                Center(
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.height * 0.4,
+                    child: Image.asset(
+                      'assets/practice.jpg',
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
-              ),
 
-              Text(
-                "Ready to test your Finnish skills?",
-                style: AppFonts.h1,
-              ),
+                Text(
+                  "Ready to test your Finnish skills?",
+                  style: AppFonts.h1,
+                ),
 
-              24.0.verticalSpace,
-              const Expanded(
-                child: ExercisesList(),
-              ),
-            ],
+                24.0.verticalSpace,
+                const Expanded(
+                  child: ExercisesList(),
+                ),
+              ],
+            ),
           ),
         ),
-      ),
 
-      /// BOTTOM BAR
-      bottomNavigationBar: const AppBottomBar(),
+        /// BOTTOM BAR
+        bottomNavigationBar: const AppBottomBar(),
+      ),
     );
   }
 }
