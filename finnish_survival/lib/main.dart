@@ -51,7 +51,6 @@ final _initialDb = Database(
           word: 'I\'m sorry',
           finnishTranslations: [
             FinnishWord(id: 'olen_pahoillani', word: 'Olen pahoillani'),
-            FinnishWord(id: 'anteeksi', word: 'Anteeksi'),
           ],
         ),
       ],
@@ -87,6 +86,70 @@ final _initialDb = Database(
             FinnishWord(id: 'veli', word: 'Veli'),
             FinnishWord(id: 'velipoika', word: 'Velipoika'),
             FinnishWord(id: 'veljenpoika', word: 'Veljenpoika'),
+          ],
+        ),
+      ],
+    ),
+    Topic(
+      id: 'verb_to_be',
+      name: 'Verb "to be"',
+      isComplete: false,
+      isFavorite: false,
+      words: [
+        EnglishWord(
+          id: 'i_am',
+          word: 'I am',
+          finnishTranslations: [
+            FinnishWord(id: 'minä_olen', word: 'Minä olen'),
+          ],
+        ),
+        EnglishWord(
+          id: 'you_are',
+          word: 'You are',
+          finnishTranslations: [
+            FinnishWord(id: 'sinä_olet', word: 'Sinä olet'),
+          ],
+        ),
+        EnglishWord(
+          id: 'he_is',
+          word: 'He is',
+          finnishTranslations: [
+            FinnishWord(id: 'hän_on', word: 'Hän on'),
+          ],
+        ),
+        EnglishWord(
+          id: 'she_is',
+          word: 'She is',
+          finnishTranslations: [
+            FinnishWord(id: 'hän_on', word: 'Hän on'),
+          ],
+        ),
+        EnglishWord(
+          id: 'it_is',
+          word: 'It is',
+          finnishTranslations: [
+            FinnishWord(id: 'se_on', word: 'Se on'),
+          ],
+        ),
+        EnglishWord(
+          id: 'we_are',
+          word: 'We are',
+          finnishTranslations: [
+            FinnishWord(id: 'me_olemme', word: 'Me olemme'),
+          ],
+        ),
+        EnglishWord(
+          id: 'you_are_plural',
+          word: 'You are',
+          finnishTranslations: [
+            FinnishWord(id: 'te_olette', word: 'Te olette'),
+          ],
+        ),
+        EnglishWord(
+          id: 'they_are',
+          word: 'They are',
+          finnishTranslations: [
+            FinnishWord(id: 'he_ovat', word: 'He ovat'),
           ],
         ),
       ],
@@ -148,6 +211,35 @@ final _initialDb = Database(
           question: 'What is the Finnish translation for "Brother"?',
           options: ['Äiti', 'Isä', 'Veli'],
           answer: 'Veli',
+        ),
+      ],
+    ),
+    TopicExercise(
+      id: 'verb_to_be',
+      name: "Verb 'to be'",
+      isComplete: false,
+      isFavorite: false,
+      exercises: [
+        Exercise(
+          id: 'verb_to_be_1',
+          category: 'Verb "to be"',
+          question: 'What is the Finnish translation for "I am"?',
+          options: ['Minä olen', 'Sinä olet', 'Hän on'],
+          answer: 'Minä olen',
+        ),
+        Exercise(
+          id: 'verb_to_be_2',
+          category: 'Verb "to be"',
+          question: 'What is the Finnish translation for "You are"?',
+          options: ['Minä olen', 'Sinä olet', 'Hän on'],
+          answer: 'Sinä olet',
+        ),
+        Exercise(
+          id: 'verb_to_be_3',
+          category: 'Verb "to be"',
+          question: 'What is the Finnish translation for "He is"?',
+          options: ['Minä olen', 'Sinä olet', 'Hän on'],
+          answer: 'Hän on',
         ),
       ],
     ),

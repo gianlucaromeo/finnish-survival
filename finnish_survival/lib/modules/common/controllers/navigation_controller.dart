@@ -13,10 +13,11 @@ class NavigationController {
 
   void setCurrentIndex(int index) {
     _currentIndex = index;
-    _navigateTo(_routes[index]);
+    Get.offAndToNamed(_routes[index]);
   }
 
-  void _navigateTo(String route) {
-    Get.offAndToNamed(route);
+  void pushToIndex(int index) {
+    _currentIndex = index;
+    Get.toNamed(_routes[index]);
   }
 }

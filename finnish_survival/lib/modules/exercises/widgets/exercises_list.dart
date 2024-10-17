@@ -23,7 +23,7 @@ class ExercisesList extends GetView<ExercisesPageController> {
                   },
                   onTap: () {
                     controller.setExercises(topicExercise);
-                    Get.find<NavigationController>().setCurrentIndex(2);
+                    Get.find<NavigationController>().pushToIndex(2);
                   },
                 );
               },

@@ -10,12 +10,14 @@ class TopicExerciseQuestion extends GetView<ExercisesPageController> {
 
   @override
   Widget build(BuildContext context) {
-    if (controller.currentTopicExercise.value == null) {
+    if (controller.currentTopicExercise.value == null ||
+        controller.isLastExercise.value ||
+        controller.isLastExercise.value) {
       return const SizedBox();
     }
 
     return Obx(() {
-      final index = controller.currentExerciseIndex.value!;
+      final index = controller.currentExerciseIndex.value;
       return Text(
         controller.currentTopicExercise.value!.exercises[index].question,
         style: AppFonts.h1,

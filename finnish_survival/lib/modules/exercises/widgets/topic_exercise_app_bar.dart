@@ -9,11 +9,14 @@ class TopicExerciseAppBar extends GetView<ExercisesPageController>
 
   @override
   Widget build(BuildContext context) {
+    if (controller.currentTopicExercise.value == null) {
+      return const SizedBox();
+    }
+
     return CustomAppBar(
       title: controller.currentTopicExercise.value!.name,
       onBack: () {
-        Get.back();
-        controller.resetExercises();
+        Get.find<NavigationController>().setCurrentIndex(1);
       },
     );
   }

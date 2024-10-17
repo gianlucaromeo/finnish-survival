@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:finnish_survival/modules/common/common.dart';
 import 'package:finnish_survival/modules/exercises/exercises.dart';
 import 'package:flutter/material.dart';
@@ -66,15 +68,14 @@ class TopicExerciseForm extends GetView<ExercisesPageController> {
             },
             onFieldSubmitted: (value) {
               if (controller.formKey.currentState!.validate()) {
-                controller.nextExercise();
                 if (controller.isLastExercise.value) {
+                  controller.resetExercises();
                   Get.find<NavigationController>().setCurrentIndex(1);
                 } else {
-                  _focusNode.requestFocus();
+                  controller.nextExercise();
                 }
-              } else {
-                _focusNode.requestFocus();
               }
+              _focusNode.requestFocus();
             },
           ),
           16.0.verticalSpace,
