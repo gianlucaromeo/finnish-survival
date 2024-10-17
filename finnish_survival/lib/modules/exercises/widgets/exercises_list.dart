@@ -21,7 +21,8 @@ class ExercisesList extends GetView<ExercisesPageController> {
                     controller.toggleTopicExerciseIsFavorite(topicExercise.id);
                   },
                   onTap: () {
-                    // TODO - Navigate to the exercise page
+                    controller.setExercises(topicExercise);
+                    Get.toNamed('/exercises/current');
                   },
                 );
               },

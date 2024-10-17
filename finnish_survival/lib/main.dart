@@ -166,6 +166,13 @@ class MainApp extends StatelessWidget {
           ),
           transition: Transition.noTransition,
         ),
+        GetPage(
+          name: '/exercises/current',
+          page: () => ResponsiveLayout(
+            small: TopicExercisePageSmall(),
+            large: TopicExercisePageSmall(),
+          ),
+        ),
       ],
       home: const ResponsiveLayout(
         small: LearnPageSmall(),

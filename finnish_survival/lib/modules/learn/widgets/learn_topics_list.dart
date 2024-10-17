@@ -19,16 +19,12 @@ class LearnTopicsList extends GetView<LearnPageController> {
                 return LearnTopicItem(
                   topic: topic,
                   onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          controller.setTopic(topic);
-                          return const ResponsiveLayout(
-                            small: LearnTopicPageSmall(),
-                            medium: LearnTopicPageLarge(),
-                            large: LearnTopicPageLarge(),
-                          );
-                        },
+                    controller.setTopic(topic);
+                    Get.to(
+                      const ResponsiveLayout(
+                        small: LearnTopicPageSmall(),
+                        medium: LearnTopicPageLarge(),
+                        large: LearnTopicPageLarge(),
                       ),
                     );
                   },

@@ -118,4 +118,18 @@ class FakeDatabaseService {
 
     _setTopicExercises(newTopicExercises);
   }
+
+  void markTopicExerciseAsComplete(String topicId) {
+    _localDbService.setTopicExerciseCompleted(topicId);
+
+    final newTopicExercises = fakeDatabase.value.topicExercises.map((topicExercise) {
+      if (topicExercise.id == topicId) {
+        return topicExercise.copyWith(isComplete: true);
+      } else {
+        return topicExercise;
+      }
+    }).toList();
+
+    _setTopicExercises(newTopicExercises);
+  }
 }
