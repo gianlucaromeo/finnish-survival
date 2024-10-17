@@ -122,6 +122,35 @@ final _initialDb = Database(
         ),
       ],
     ),
+    TopicExercise(
+      id: 'family',
+      name: "Family",
+      isComplete: false,
+      isFavorite: false,
+      exercises: [
+        Exercise(
+          id: 'family_1',
+          category: 'Family',
+          question: 'What is the Finnish translation for "Mother"?',
+          options: ['Äiti', 'Isä', 'Veli'],
+          answer: 'Äiti',
+        ),
+        Exercise(
+          id: 'family_2',
+          category: 'Family',
+          question: 'What is the Finnish translation for "Father"?',
+          options: ['Äiti', 'Isä', 'Veli'],
+          answer: 'Isä',
+        ),
+        Exercise(
+          id: 'family_3',
+          category: 'Family',
+          question: 'What is the Finnish translation for "Brother"?',
+          options: ['Äiti', 'Isä', 'Veli'],
+          answer: 'Veli',
+        ),
+      ],
+    ),
   ],
 );
 
