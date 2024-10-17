@@ -8,7 +8,8 @@ class TopicExerciseStepsProgressBar extends GetView<ExercisesPageController> {
 
   @override
   Widget build(BuildContext context) {
-    if (controller.currentTopicExercise.value == null) {
+    if (controller.currentTopicExercise.value == null ||
+        controller.currentExerciseIndex.value == null) {
       return const SizedBox();
     }
 
