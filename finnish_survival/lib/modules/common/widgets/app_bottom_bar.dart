@@ -31,10 +31,6 @@ class AppBottomBar extends GetView<NavigationController> {
           icon: Icon(Icons.edit_outlined),
           label: "Practice",
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.settings_outlined),
-          label: "Settings",
-        ),
       ],
     );
   }

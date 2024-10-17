@@ -42,12 +42,6 @@ class AppNavigationRail extends GetView<NavigationController> {
           label: const Text('Practice'),
           padding: 20.0.paddingOnlyLeft,
         ),
-        NavigationRailDestination(
-          icon: const Icon(Icons.settings_outlined),
-          selectedIcon: const Icon(Icons.settings_outlined),
-          label: const Text('Settings'),
-          padding: 20.0.paddingOnlyLeft,
-        ),
       ],
     );
   }
