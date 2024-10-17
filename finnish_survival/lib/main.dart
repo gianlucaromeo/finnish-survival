@@ -148,6 +148,11 @@ class MainApp extends StatelessWidget {
     return GetMaterialApp(
       theme: ThemeData().copyWith(
         textTheme: AppFonts.textTheme,
+        textSelectionTheme: TextSelectionThemeData(
+          cursorColor: AppColors.highlightsDarkest,
+          selectionColor: AppColors.highlightsDarkest,
+          selectionHandleColor: AppColors.highlightsDarkest,
+        ),
       ),
       getPages: [
         GetPage(
@@ -168,7 +173,7 @@ class MainApp extends StatelessWidget {
         ),
         GetPage(
           name: '/exercises/current',
-          page: () => ResponsiveLayout(
+          page: () => const ResponsiveLayout(
             small: TopicExercisePageSmall(),
             large: TopicExercisePageLarge(),
           ),

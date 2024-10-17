@@ -21,6 +21,9 @@ class AppColors {
   static get neutralDarkDarkest => const Color(0xFF1F2024);
   static get neutralDarkLight => const Color(0xFF71727A);
   static get neutralDarkLightest => const Color(0xFF8F9098);
+
+  /* ERROR */
+  static get error => const Color(0xFFED3241);
 }
 
 TextStyle _ts(FontWeight fontWeight, double fontSize) {
