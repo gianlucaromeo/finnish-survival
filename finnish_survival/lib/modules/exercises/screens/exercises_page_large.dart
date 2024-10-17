@@ -22,13 +22,21 @@ class ExercisesPageLarge extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      SizedBox(
+                        width: 620.0,
+                        child: Center(
+                          child: Image.asset(
+                            'assets/practice.jpg',
+                            width: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+
                       Text(
                         "Ready to test your Finnish skills?",
                         style: AppFonts.h1,
                       ),
-
-                      //12.0.verticalSpace,
-                      //Filter(selected: 0, onOpenFilters: () {},),
 
                       24.0.verticalSpace,
                       const Expanded(child: ExercisesList()),

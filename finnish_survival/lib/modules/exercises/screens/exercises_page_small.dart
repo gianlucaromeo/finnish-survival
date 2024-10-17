@@ -13,15 +13,22 @@ class ExercisesPageSmall extends StatelessWidget {
         child: Padding(
           padding: AppPadding.scaffoldPadding,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Center(
+                child: SizedBox(
+                  width: 620.0,
+                  child: Image.asset(
+                    'assets/practice.jpg',
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+
               Text(
                 "Ready to test your Finnish skills?",
                 style: AppFonts.h1,
               ),
-
-              //12.0.verticalSpace,
-              //Filter(selected: 0, onOpenFilters: () {},),
 
               24.0.verticalSpace,
               const Expanded(

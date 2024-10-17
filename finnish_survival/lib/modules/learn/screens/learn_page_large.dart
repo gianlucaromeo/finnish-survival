@@ -22,13 +22,21 @@ class LearnPageLarge extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      SizedBox(
+                        width: 520.0,
+                        child: Center(
+                          child: Image.asset(
+                            'assets/learn.jpg',
+                            width: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+
                       Text(
                         "What do you want to learn today?",
                         style: AppFonts.h1,
                       ),
-
-                      //12.0.verticalSpace,
-                      //Filter(selected: 0, onOpenFilters: () {},),
 
                       24.0.verticalSpace,
                       const Expanded(child: LearnTopicsList()),
