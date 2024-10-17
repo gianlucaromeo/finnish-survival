@@ -17,7 +17,6 @@ class LearnTopicPageLarge extends GetView<LearnPageController> {
           padding: AppPadding.scaffoldPadding,
           child: Center(
             child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(
                     width: 600,
@@ -26,7 +25,7 @@ class LearnTopicPageLarge extends GetView<LearnPageController> {
                   64.0.verticalSpace,
                   Flexible(
                     child: SizedBox(
-                      width: 650.0,
+                      width: 600.0,
                       height: 400.0,
                       child: Column(
                         mainAxisSize: MainAxisSize.min,

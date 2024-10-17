@@ -170,7 +170,7 @@ class MainApp extends StatelessWidget {
           name: '/exercises/current',
           page: () => ResponsiveLayout(
             small: TopicExercisePageSmall(),
-            large: TopicExercisePageSmall(),
+            large: TopicExercisePageLarge(),
           ),
         ),
       ],

@@ -8,6 +8,10 @@ class TopicExerciseStepsProgressBar extends GetView<ExercisesPageController> {
 
   @override
   Widget build(BuildContext context) {
+    if (controller.currentTopicExercise.value == null) {
+      return const SizedBox();
+    }
+
     return Obx(() {
       final currentStep = controller.currentExerciseIndex.value! + 1;
 

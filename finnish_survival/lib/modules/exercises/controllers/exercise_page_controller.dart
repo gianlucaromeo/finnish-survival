@@ -45,6 +45,7 @@ class ExercisesPageController extends GetxController {
     _isLastExercise.value = _currentExerciseIndex.value == totalExercises - 1;
     if (_isLastExercise.value) {
       _fakeDatabaseService.markTopicExerciseAsComplete(_currentTopicExercise.value!.id);
+      resetExercises();
     }
     formKey.currentState?.reset();
   }
@@ -55,7 +56,7 @@ class ExercisesPageController extends GetxController {
   }
 
   void resetExercises() async {
-    Future.delayed(const Duration(milliseconds: 500));
+    await Future.delayed(const Duration(milliseconds: 500));
     _currentTopicExercise.value = null;
     _currentExerciseIndex.value = null;
     _isLastExercise.value = false;
