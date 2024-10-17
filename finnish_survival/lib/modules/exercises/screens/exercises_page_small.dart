@@ -19,11 +19,10 @@ class ExercisesPageSmall extends StatelessWidget {
                 "Ready to test your Finnish skills?",
                 style: AppFonts.h1,
               ),
-              12.0.verticalSpace,
-              Filter(
-                selected: 0,
-                onOpenFilters: () {},
-              ),
+
+              //12.0.verticalSpace,
+              //Filter(selected: 0, onOpenFilters: () {},),
+              
               24.0.verticalSpace,
               const Expanded(
                 child: ExercisesList(),
