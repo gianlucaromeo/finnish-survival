@@ -10,9 +10,9 @@ class TopicExerciseForm extends GetView<ExercisesPageController> {
 
   final _focusNode = FocusNode();
 
-
   @override
   Widget build(BuildContext context) {
+    _focusNode.requestFocus();
     return Form(
       key: controller.formKey,
       child: Column(
@@ -68,7 +68,7 @@ class TopicExerciseForm extends GetView<ExercisesPageController> {
               if (controller.formKey.currentState!.validate()) {
                 controller.nextExercise();
                 if (controller.isLastExercise.value) {
-                  Get.toNamed('/exercises');
+                  Get.find<NavigationController>().setCurrentIndex(1);
                 } else {
                   _focusNode.requestFocus();
                 }

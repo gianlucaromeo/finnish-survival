@@ -4,7 +4,7 @@ class NavigationController {
   final _routes = [
     '/learn',
     '/exercises',
-    '/settings',
+    '/exercises/current',
   ];
 
   int _currentIndex = 0;
