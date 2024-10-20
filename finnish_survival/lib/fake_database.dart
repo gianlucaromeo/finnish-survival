@@ -555,6 +555,141 @@ final fakeDatabase = Database(
         ),
       ],
     ),
+    Topic(
+      id: 'languages',
+      name: 'Languages',
+      isComplete: false,
+      isFavorite: false,
+      words: [
+        EnglishWord(
+          id: 'which_languages_do_you_speak',
+          word: 'Which languages do you speak?',
+          finnishTranslations: [
+            FinnishWord(id: 'mita_kielta_sa_puhut', word: 'Mitä kieltä sä puhut?'),
+          ],
+        ),
+        EnglishWord(
+          id: 'i_speak_finnish',
+          word: 'I speak Finnish',
+          finnishTranslations: [
+            FinnishWord(id: 'mina_puhun_suomea', word: 'Minä puhun suomea'),
+          ],
+        ),
+        EnglishWord(
+          id: 'i_only_speak_a_little_finnish',
+          word: 'I only speak a little Finnish',
+          finnishTranslations: [
+            FinnishWord(id: 'mina_puhun_vain_vahan_suomea', word: 'Minä puhun vain vähän suomea'),
+          ],
+        ),
+        EnglishWord(
+          id: 'i_understand_a_bit_of_finnish',
+          word: 'I understand a bit of Finnish',
+          finnishTranslations: [
+            FinnishWord(id: 'mina_ymmaran_vahan_suomea', word: 'Minä ymmärrän vähän suomea'),
+          ],
+        ),
+        EnglishWord(
+          id: 'i_study_finnish',
+          word: 'I study Finnish',
+          finnishTranslations: [
+            FinnishWord(id: 'mina_opiskelen_suomea', word: 'Minä opiskelen suomea'),
+          ],
+        ),
+        EnglishWord(
+          id: 'i_speak_multiple_languages',
+          word: 'I speak Italian, English, Spanish, and a bit of Finnish',
+          finnishTranslations: [
+            FinnishWord(id: 'ma_puhun_italiaa_englanti_espanja_vahan_suomea', word: 'Mä puhun italiaa, englantia, espanjaa ja vähän suomea'),
+          ],
+        ),
+        EnglishWord(
+          id: 'my_mother_tongue_is',
+          word: 'My mother-tongue is...',
+          finnishTranslations: [
+            FinnishWord(id: 'aidinkieli_on', word: 'Äidinkieli on...'),
+          ],
+        ),
+        EnglishWord(
+          id: 'do_you_speak_english_or_french',
+          word: 'Do you speak English or French?',
+          finnishTranslations: [
+            FinnishWord(id: 'puhutko_sina_englantia_tai_ranskaa', word: 'Puhutko sinä englantia tai ranskaa?'),
+          ],
+        ),
+        EnglishWord(
+          id: 'i_speak_english_and_french',
+          word: 'I speak English and French',
+          finnishTranslations: [
+            FinnishWord(id: 'mina_puhun_englantia_ranskaa', word: 'Minä puhun englantia ja ranskaa'),
+          ],
+        ),
+        EnglishWord(
+          id: 'what_is_x_in_english',
+          word: 'What is "x" in English?',
+          finnishTranslations: [
+            FinnishWord(id: 'mika_on_englantiksi', word: 'Mikä “x” on englanniksi?'),
+          ],
+        ),
+      ],
+    ),
+    Topic(
+      id: 'cities',
+      name: 'Cities',
+      isComplete: false,
+      isFavorite: false,
+      words: [
+        EnglishWord(
+          id: 'i_am_from_italy',
+          word: 'I am from Italy',
+          finnishTranslations: [
+            FinnishWord(id: 'ma_olen_italialainen', word: 'Mä olen italialainen'),
+          ],
+        ),
+        EnglishWord(
+          id: 'where_do_you_live',
+          word: 'Where do you live?',
+          finnishTranslations: [
+            FinnishWord(id: 'missa_sa_asut', word: 'Missä sä asut?'),
+          ],
+        ),
+        EnglishWord(
+          id: 'i_live_in_finland',
+          word: 'I live in Finland',
+          finnishTranslations: [
+            FinnishWord(id: 'ma_asun_suomessa', word: 'Mä asun Suomessa'),
+          ],
+        ),
+        EnglishWord(
+          id: 'capital_city_of_finland',
+          word: 'The capital city of Finland is Helsinki',
+          finnishTranslations: [
+            FinnishWord(id: 'suomen_paakaupunki_helsinki', word: 'Suomen pääkaupunki on Helsinki'),
+          ],
+        ),
+        EnglishWord(
+          id: 'carlo_comes_from_spain',
+          word: 'Carlo comes from Spain',
+          finnishTranslations: [
+            FinnishWord(id: 'carlo_on_kotoisin_espanjasta', word: 'Carlo on kotoisin Espanjasta'),
+          ],
+        ),
+        EnglishWord(
+          id: 'i_am_italian',
+          word: 'I am Italian',
+          finnishTranslations: [
+            FinnishWord(id: 'mina_olen_italialainen', word: 'Minä olen italialainen'),
+          ],
+        ),
+        EnglishWord(
+          id: 'i_am_finnish',
+          word: 'I am Finnish',
+          finnishTranslations: [
+            FinnishWord(id: 'mina_olen_suomalainen', word: 'Minä olen suomalainen'),
+          ],
+        ),
+      ],
+    ),
   ],
   topicExercises: [
     TopicExercise(
@@ -849,6 +984,92 @@ final fakeDatabase = Database(
           question: 'What is the Finnish translation for "How do you spell your first name?"',
           options: ['Mikä sinun sukunimi on?', 'Miten sinun etunimi kirjoitetaan?', 'Kuka sinä olet?'],
           answer: 'Miten sinun etunimi kirjoitetaan?',
+        ),
+      ],
+    ),
+    TopicExercise(
+      id: 'languages',
+      name: 'Languages',
+      isComplete: false,
+      isFavorite: false,
+      exercises: [
+        Exercise(
+          id: 'languages_1',
+          category: 'Languages',
+          question: 'What is the Finnish translation for "Which languages do you speak?"',
+          options: ['Mitä kieltä sä puhut?', 'Minä puhun suomea', 'Puhutko sinä englantia tai ranskaa?'],
+          answer: 'Mitä kieltä sä puhut?',
+        ),
+        Exercise(
+          id: 'languages_2',
+          category: 'Languages',
+          question: 'What is the Finnish translation for "I speak Finnish"?',
+          options: ['Minä puhun vain vähän suomea', 'Minä puhun suomea', 'Minä ymmärrän vähän suomea'],
+          answer: 'Minä puhun suomea',
+        ),
+        Exercise(
+          id: 'languages_3',
+          category: 'Languages',
+          question: 'What is the Finnish translation for "Do you speak English or French?"',
+          options: ['Puhutko sinä englantia tai ranskaa?', 'Mikä on sinun äidinkieli?', 'Minä opiskelen suomea'],
+          answer: 'Puhutko sinä englantia tai ranskaa?',
+        ),
+        Exercise(
+          id: 'languages_4',
+          category: 'Languages',
+          question: 'What is the Finnish translation for "What is \'x\' in English?"',
+          options: ['Mikä “x” on englanniksi?', 'Minä puhun suomea', 'Puhutko sinä englantia?'],
+          answer: 'Mikä “x” on englanniksi?',
+        ),
+        Exercise(
+          id: 'languages_5',
+          category: 'Languages',
+          question: 'What is the Finnish translation for "I speak Italian, English, Spanish, and a bit of Finnish"?',
+          options: ['Mä puhun italiaa, englantia, espanjaa ja vähän suomea', 'Minä opiskelen suomea', 'Mitä sinä puhut?'],
+          answer: 'Mä puhun italiaa, englantia, espanjaa ja vähän suomea',
+        ),
+      ],
+    ),
+    TopicExercise(
+      id: 'cities',
+      name: 'Cities',
+      isComplete: false,
+      isFavorite: false,
+      exercises: [
+        Exercise(
+          id: 'cities_1',
+          category: 'Cities',
+          question: 'What is the Finnish translation for "I am from Italy"?',
+          options: ['Mä olen italialainen', 'Mä asun Suomessa', 'Carlos on kotoisin Espanjasta'],
+          answer: 'Mä olen italialainen',
+        ),
+        Exercise(
+          id: 'cities_2',
+          category: 'Cities',
+          question: 'What is the Finnish translation for "Where do you live?"',
+          options: ['Mistä sinä olet?', 'Missä sä asut?', 'Minä olen suomalainen'],
+          answer: 'Missä sä asut?',
+        ),
+        Exercise(
+          id: 'cities_3',
+          category: 'Cities',
+          question: 'What is the Finnish translation for "The capital city of Finland is Helsinki"?',
+          options: ['Carlos on kotoisin Espanjasta', 'Suomen pääkaupunki on Helsinki', 'Minä olen suomalainen'],
+          answer: 'Suomen pääkaupunki on Helsinki',
+        ),
+        Exercise(
+          id: 'cities_4',
+          category: 'Cities',
+          question: 'What is the Finnish translation for "Carlo comes from Spain"?',
+          options: ['Mä olen italialainen', 'Carlos on kotoisin Espanjasta', 'Mä asun Suomessa'],
+          answer: 'Carlo on kotoisin Espanjasta',
+        ),
+        Exercise(
+          id: 'cities_5',
+          category: 'Cities',
+          question: 'What is the Finnish translation for "I am Finnish"?',
+          options: ['Minä olen italialainen', 'Minä olen suomalainen', 'Missä sä asut?'],
+          answer: 'Minä olen suomalainen',
         ),
       ],
     ),
