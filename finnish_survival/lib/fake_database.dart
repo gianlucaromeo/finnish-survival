@@ -1117,6 +1117,77 @@ final fakeDatabase = Database(
         ),
       ],
     ),
+    Topic(
+      id: 'jobs',
+      name: 'Jobs',
+      isComplete: false,
+      isFavorite: false,
+      words: [
+        EnglishWord(
+          id: 'profession',
+          word: 'Profession',
+          finnishTranslations: [
+            FinnishWord(id: 'ammatti', word: 'Ammatti'),
+          ],
+        ),
+        EnglishWord(
+          id: 'entrepreneur',
+          word: 'Entrepreneur',
+          finnishTranslations: [
+            FinnishWord(id: 'yrittäjä', word: 'Yrittäjä'),
+          ],
+        ),
+        EnglishWord(
+          id: 'chef',
+          word: 'Chef',
+          finnishTranslations: [
+            FinnishWord(id: 'kokki', word: 'Kokki'),
+          ],
+        ),
+        EnglishWord(
+          id: 'nurse',
+          word: 'Nurse',
+          finnishTranslations: [
+            FinnishWord(id: 'sairaanhoitaja', word: 'Sairaanhoitaja'),
+          ],
+        ),
+        EnglishWord(
+          id: 'lab_technician',
+          word: 'Lab technician',
+          finnishTranslations: [
+            FinnishWord(id: 'laborantti', word: 'Laborantti'),
+          ],
+        ),
+        EnglishWord(
+          id: 'journalist',
+          word: 'Journalist',
+          finnishTranslations: [
+            FinnishWord(id: 'toimittaja', word: 'Toimittaja'),
+          ],
+        ),
+        EnglishWord(
+          id: 'doctor',
+          word: 'Doctor',
+          finnishTranslations: [
+            FinnishWord(id: 'lääkäri', word: 'Lääkäri'),
+          ],
+        ),
+        EnglishWord(
+          id: 'engineer',
+          word: 'Engineer',
+          finnishTranslations: [
+            FinnishWord(id: 'insinööri', word: 'Insinööri'),
+          ],
+        ),
+        EnglishWord(
+          id: 'hairdresser',
+          word: 'Hairdresser',
+          finnishTranslations: [
+            FinnishWord(id: 'kampaaja', word: 'Kampaaja'),
+          ],
+        ),
+      ],
+    ),
   ],
   topicExercises: [
     TopicExercise(
@@ -1726,6 +1797,56 @@ final fakeDatabase = Database(
           question: 'What is the Finnish translation for "Friend"?',
           options: ['Ystävä', 'Mies', 'Sukulaiset'],
           answer: 'Ystävä',
+        ),
+      ],
+    ),
+    TopicExercise(
+      id: 'jobs',
+      name: 'Jobs',
+      isComplete: false,
+      isFavorite: false,
+      exercises: [
+        Exercise(
+          id: 'jobs_1',
+          category: 'Jobs',
+          question: 'What is the Finnish translation for "Profession"?',
+          options: ['Ammatti', 'Kokki', 'Lääkäri'],
+          answer: 'Ammatti',
+        ),
+        Exercise(
+          id: 'jobs_2',
+          category: 'Jobs',
+          question: 'What is the Finnish translation for "Entrepreneur"?',
+          options: ['Yrittäjä', 'Toimittaja', 'Insinööri'],
+          answer: 'Yrittäjä',
+        ),
+        Exercise(
+          id: 'jobs_3',
+          category: 'Jobs',
+          question: 'What is the Finnish translation for "Chef"?',
+          options: ['Kokki', 'Lääkäri', 'Ammatti'],
+          answer: 'Kokki',
+        ),
+        Exercise(
+          id: 'jobs_4',
+          category: 'Jobs',
+          question: 'What is the Finnish translation for "Nurse"?',
+          options: ['Sairaanhoitaja', 'Laborantti', 'Kampaaja'],
+          answer: 'Sairaanhoitaja',
+        ),
+        Exercise(
+          id: 'jobs_5',
+          category: 'Jobs',
+          question: 'What is the Finnish translation for "Journalist"?',
+          options: ['Toimittaja', 'Insinööri', 'Lääkäri'],
+          answer: 'Toimittaja',
+        ),
+        Exercise(
+          id: 'jobs_6',
+          category: 'Jobs',
+          question: 'What is the Finnish translation for "Doctor"?',
+          options: ['Lääkäri', 'Kampaaja', 'Toimittaja'],
+          answer: 'Lääkäri',
         ),
       ],
     ),
