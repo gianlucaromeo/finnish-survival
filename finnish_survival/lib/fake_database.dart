@@ -690,6 +690,190 @@ final fakeDatabase = Database(
         ),
       ],
     ),
+    Topic(
+      id: 'personal_data_part_1',
+      name: 'Personal Data (Part 1)',
+      isComplete: false,
+      isFavorite: false,
+      words: [
+        EnglishWord(
+          id: 'first_name',
+          word: 'First name',
+          finnishTranslations: [
+            FinnishWord(id: 'etunimi', word: 'Etunimi'),
+          ],
+        ),
+        EnglishWord(
+          id: 'last_name',
+          word: 'Last name',
+          finnishTranslations: [
+            FinnishWord(id: 'sukunimi', word: 'Sukunimi'),
+          ],
+        ),
+        EnglishWord(
+          id: 'social_security_number',
+          word: 'Social Security Number',
+          finnishTranslations: [
+            FinnishWord(id: 'henkilotunnus', word: 'Henkilötunnus'),
+          ],
+        ),
+        EnglishWord(
+          id: 'phone_number',
+          word: 'Phone number',
+          finnishTranslations: [
+            FinnishWord(id: 'puhelinnumero', word: 'Puhelinnumero'),
+          ],
+        ),
+        EnglishWord(
+          id: 'age',
+          word: 'Age',
+          finnishTranslations: [
+            FinnishWord(id: 'ika', word: 'Ikä'),
+          ],
+        ),
+        EnglishWord(
+          id: 'years',
+          word: 'Years',
+          finnishTranslations: [
+            FinnishWord(id: 'vuotta', word: 'Vuotta'),
+          ],
+        ),
+        EnglishWord(
+          id: 'email_address',
+          word: 'Email address',
+          finnishTranslations: [
+            FinnishWord(id: 'sahkopostiosoite', word: 'Sähköpostiosoite'),
+          ],
+        ),
+        EnglishWord(
+          id: 'hometown',
+          word: 'Hometown',
+          finnishTranslations: [
+            FinnishWord(id: 'kotikaupunki', word: 'Kotikaupunki'),
+          ],
+        ),
+        EnglishWord(
+          id: 'citizenship',
+          word: 'Citizenship',
+          finnishTranslations: [
+            FinnishWord(id: 'kansalaisuus', word: 'Kansalaisuus'),
+          ],
+        ),
+        EnglishWord(
+          id: 'sex',
+          word: 'Sex',
+          finnishTranslations: [
+            FinnishWord(id: 'sukupuoli', word: 'Sukupuoli'),
+          ],
+        ),
+        EnglishWord(
+          id: 'mother_tongue',
+          word: 'Mother-tongue',
+          finnishTranslations: [
+            FinnishWord(id: 'aidinkieli', word: 'Äidinkieli'),
+          ],
+        ),
+        EnglishWord(
+          id: 'man',
+          word: 'Man',
+          finnishTranslations: [
+            FinnishWord(id: 'mies', word: 'Mies'),
+          ],
+        ),
+        EnglishWord(
+          id: 'woman',
+          word: 'Woman',
+          finnishTranslations: [
+            FinnishWord(id: 'nainen', word: 'Nainen'),
+          ],
+        ),
+        EnglishWord(
+          id: 'other',
+          word: 'Other',
+          finnishTranslations: [
+            FinnishWord(id: 'muu', word: 'Muu'),
+          ],
+        ),
+      ],
+    ),
+    Topic(
+      id: 'personal_data_part_2',
+      name: 'Personal Data (Part 2)',
+      isComplete: false,
+      isFavorite: false,
+      words: [
+        EnglishWord(
+          id: 'address',
+          word: 'Address',
+          finnishTranslations: [
+            FinnishWord(id: 'osoite', word: 'Osoite'),
+          ],
+        ),
+        EnglishWord(
+          id: 'postal_code',
+          word: 'Postal code',
+          finnishTranslations: [
+            FinnishWord(id: 'postinumero', word: 'Postinumero'),
+          ],
+        ),
+        EnglishWord(
+          id: 'city',
+          word: 'City',
+          finnishTranslations: [
+            FinnishWord(id: 'kaupunki', word: 'Kaupunki'),
+          ],
+        ),
+        EnglishWord(
+          id: 'native_language',
+          word: 'Native language',
+          finnishTranslations: [
+            FinnishWord(id: 'aidinkieli', word: 'Äidinkieli'),
+          ],
+        ),
+        EnglishWord(
+          id: 'contact_method',
+          word: 'Contact method',
+          finnishTranslations: [
+            FinnishWord(id: 'yhteydenottotapa', word: 'Yhteydenottotapa'),
+          ],
+        ),
+        EnglishWord(
+          id: 'by_letter_mail',
+          word: 'By letter mail',
+          finnishTranslations: [
+            FinnishWord(id: 'postitse', word: 'Postitse'),
+          ],
+        ),
+        EnglishWord(
+          id: 'by_email',
+          word: 'By email',
+          finnishTranslations: [
+            FinnishWord(id: 'sahkopostitse', word: 'Sähköpostitse'),
+          ],
+        ),
+        EnglishWord(
+          id: 'something_else',
+          word: 'Something else',
+          finnishTranslations: [
+            FinnishWord(id: 'muuta', word: 'Muuta'),
+          ],
+        ),
+        EnglishWord(
+          id: 'ready',
+          word: 'Ready',
+          finnishTranslations: [
+            FinnishWord(id: 'valmis', word: 'Valmis'),
+          ],
+        ),
+        EnglishWord(
+          id: 'cancel',
+          word: 'Cancel',
+          finnishTranslations: [
+            FinnishWord(id: 'peruuta', word: 'Peruuta'),
+          ],
+        ),
+      ],
+    ),
   ],
   topicExercises: [
     TopicExercise(
@@ -1070,6 +1254,92 @@ final fakeDatabase = Database(
           question: 'What is the Finnish translation for "I am Finnish"?',
           options: ['Minä olen italialainen', 'Minä olen suomalainen', 'Missä sä asut?'],
           answer: 'Minä olen suomalainen',
+        ),
+      ],
+    ),
+    TopicExercise(
+      id: 'personal_data_part_1',
+      name: 'Personal Data (Part 1)',
+      isComplete: false,
+      isFavorite: false,
+      exercises: [
+        Exercise(
+          id: 'personal_data_part_1_1',
+          category: 'Personal Data (Part 1)',
+          question: 'What is the Finnish translation for "First name"?',
+          options: ['Sukunimi', 'Etunimi', 'Ikä'],
+          answer: 'Etunimi',
+        ),
+        Exercise(
+          id: 'personal_data_part_1_2',
+          category: 'Personal Data (Part 1)',
+          question: 'What is the Finnish translation for "Last name"?',
+          options: ['Puhelinnumero', 'Sukunimi', 'Äidinkieli'],
+          answer: 'Sukunimi',
+        ),
+        Exercise(
+          id: 'personal_data_part_1_3',
+          category: 'Personal Data (Part 1)',
+          question: 'What is the Finnish translation for "Phone number"?',
+          options: ['Puhelinnumero', 'Sähköpostiosoite', 'Sukupuoli'],
+          answer: 'Puhelinnumero',
+        ),
+        Exercise(
+          id: 'personal_data_part_1_4',
+          category: 'Personal Data (Part 1)',
+          question: 'What is the Finnish translation for "Email address"?',
+          options: ['Äidinkieli', 'Kotikaupunki', 'Sähköpostiosoite'],
+          answer: 'Sähköpostiosoite',
+        ),
+        Exercise(
+          id: 'personal_data_part_1_5',
+          category: 'Personal Data (Part 1)',
+          question: 'What is the Finnish translation for "Sex"?',
+          options: ['Kansalaisuus', 'Sukupuoli', 'Ikä'],
+          answer: 'Sukupuoli',
+        ),
+      ],
+    ),
+    TopicExercise(
+      id: 'personal_data_part_2',
+      name: 'Personal Data (Part 2)',
+      isComplete: false,
+      isFavorite: false,
+      exercises: [
+        Exercise(
+          id: 'personal_data_part_2_1',
+          category: 'Personal Data (Part 2)',
+          question: 'What is the Finnish translation for "Address"?',
+          options: ['Osoite', 'Postinumero', 'Peruuta'],
+          answer: 'Osoite',
+        ),
+        Exercise(
+          id: 'personal_data_part_2_2',
+          category: 'Personal Data (Part 2)',
+          question: 'What is the Finnish translation for "Postal code"?',
+          options: ['Osoite', 'Postinumero', 'Yhteydenottotapa'],
+          answer: 'Postinumero',
+        ),
+        Exercise(
+          id: 'personal_data_part_2_3',
+          category: 'Personal Data (Part 2)',
+          question: 'What is the Finnish translation for "By email"?',
+          options: ['Postitse', 'Sähköpostitse', 'Muuta'],
+          answer: 'Sähköpostitse',
+        ),
+        Exercise(
+          id: 'personal_data_part_2_4',
+          category: 'Personal Data (Part 2)',
+          question: 'What is the Finnish translation for "Something else"?',
+          options: ['Valmis', 'Muuta', 'Osoite'],
+          answer: 'Muuta',
+        ),
+        Exercise(
+          id: 'personal_data_part_2_5',
+          category: 'Personal Data (Part 2)',
+          question: 'What is the Finnish translation for "Ready"?',
+          options: ['Peruuta', 'Valmis', 'Sähköpostitse'],
+          answer: 'Valmis',
         ),
       ],
     ),
