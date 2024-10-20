@@ -988,6 +988,135 @@ final fakeDatabase = Database(
         ),
       ],
     ),
+    Topic(
+      id: 'family_part_2',
+      name: 'Family (Part 2)',
+      isComplete: false,
+      isFavorite: false,
+      words: [
+        EnglishWord(
+          id: 'male',
+          word: 'Male',
+          finnishTranslations: [
+            FinnishWord(id: 'mies', word: 'Mies'),
+          ],
+        ),
+        EnglishWord(
+          id: 'wife',
+          word: 'Wife',
+          finnishTranslations: [
+            FinnishWord(id: 'vaimo', word: 'Vaimo'),
+            FinnishWord(id: 'avovaimo', word: 'Avovaimo'),
+          ],
+        ),
+        EnglishWord(
+          id: 'sister',
+          word: 'Sister',
+          finnishTranslations: [
+            FinnishWord(id: 'sisko', word: 'Sisko'),
+          ],
+        ),
+        EnglishWord(
+          id: 'brother',
+          word: 'Brother',
+          finnishTranslations: [
+            FinnishWord(id: 'veli', word: 'Veli'),
+          ],
+        ),
+        EnglishWord(
+          id: 'father_in_law',
+          word: 'Father-in-law',
+          finnishTranslations: [
+            FinnishWord(id: 'appi', word: 'Appi'),
+          ],
+        ),
+        EnglishWord(
+          id: 'mother_in_law',
+          word: 'Mother-in-law',
+          finnishTranslations: [
+            FinnishWord(id: 'anoppi', word: 'Anoppi'),
+          ],
+        ),
+        EnglishWord(
+          id: 'family',
+          word: 'Family',
+          finnishTranslations: [
+            FinnishWord(id: 'perhe', word: 'Perhe'),
+          ],
+        ),
+        EnglishWord(
+          id: 'grandma',
+          word: 'Grandma',
+          finnishTranslations: [
+            FinnishWord(id: 'mummo', word: 'Mummo'),
+          ],
+        ),
+        EnglishWord(
+          id: 'grandpa_1',
+          word: 'Grandpa (1)',
+          finnishTranslations: [
+            FinnishWord(id: 'pappa', word: 'Pappa'),
+          ],
+        ),
+        EnglishWord(
+          id: 'grandpa_2',
+          word: 'Grandpa (2)',
+          finnishTranslations: [
+            FinnishWord(id: 'ukki', word: 'Ukki'),
+          ],
+        ),
+      ],
+    ),
+    Topic(
+      id: 'family_part_3',
+      name: 'Family (Part 3)',
+      isComplete: false,
+      isFavorite: false,
+      words: [
+        EnglishWord(
+          id: 'relatives',
+          word: 'Relatives',
+          finnishTranslations: [
+            FinnishWord(id: 'sukulaiset', word: 'Sukulaiset'),
+          ],
+        ),
+        EnglishWord(
+          id: 'baby',
+          word: 'Baby',
+          finnishTranslations: [
+            FinnishWord(id: 'vauva', word: 'Vauva'),
+          ],
+        ),
+        EnglishWord(
+          id: 'man',
+          word: 'Man',
+          finnishTranslations: [
+            FinnishWord(id: 'mies', word: 'Mies'),
+          ],
+        ),
+        EnglishWord(
+          id: 'friend',
+          word: 'Friend',
+          finnishTranslations: [
+            FinnishWord(id: 'ystävä', word: 'Ystävä'),
+          ],
+        ),
+        EnglishWord(
+          id: 'children_plural',
+          word: 'Children (partitive plural)',
+          finnishTranslations: [
+            FinnishWord(id: 'lapsia', word: 'Lapsia'),
+          ],
+        ),
+        EnglishWord(
+          id: 'children_singular',
+          word: 'Children (partitive singular)',
+          finnishTranslations: [
+            FinnishWord(id: 'lasta', word: 'Lasta'),
+          ],
+        ),
+      ],
+    ),
   ],
   topicExercises: [
     TopicExercise(
@@ -1007,8 +1136,8 @@ final fakeDatabase = Database(
           id: 'greetings_2',
           category: 'Greetings',
           question: 'What is the Finnish translation for "Goodbye"?',
-          options: ['Kiitos', 'Moi moi', 'Ei'],
-          answer: 'Moi moi',
+          options: ['Kiitos', 'Moikka', 'Ei'],
+          answer: 'Moikka',
         ),
         Exercise(
           id: 'greetings_3',
@@ -1511,6 +1640,92 @@ final fakeDatabase = Database(
           question: 'What is the Finnish translation for "Son"?',
           options: ['Poika', 'Isoisä', 'Vanhemmat'],
           answer: 'Poika',
+        ),
+      ],
+    ),
+    TopicExercise(
+      id: 'family_part_2',
+      name: 'Family (Part 2)',
+      isComplete: false,
+      isFavorite: false,
+      exercises: [
+        Exercise(
+          id: 'family_part_2_1',
+          category: 'Family (Part 2)',
+          question: 'What is the Finnish translation for "Male"?',
+          options: ['Mies', 'Veli', 'Sisko'],
+          answer: 'Mies',
+        ),
+        Exercise(
+          id: 'family_part_2_2',
+          category: 'Family (Part 2)',
+          question: 'What is the Finnish translation for "Wife"?',
+          options: ['Vaimo', 'Sisko', 'Mummo'],
+          answer: 'Vaimo',
+        ),
+        Exercise(
+          id: 'family_part_2_3',
+          category: 'Family (Part 2)',
+          question: 'What is the Finnish translation for "Sister"?',
+          options: ['Sisko', 'Anoppi', 'Appi'],
+          answer: 'Sisko',
+        ),
+        Exercise(
+          id: 'family_part_2_4',
+          category: 'Family (Part 2)',
+          question: 'What is the Finnish translation for "Mother-in-law"?',
+          options: ['Anoppi', 'Vaimo', 'Mummo'],
+          answer: 'Anoppi',
+        ),
+        Exercise(
+          id: 'family_part_2_5',
+          category: 'Family (Part 2)',
+          question: 'What is a Finnish translation for "Grandpa" (hint: "u...")?',
+          options: ['Ukki', 'Pappa', 'Appi'],
+          answer: 'Ukki',
+        ),
+      ],
+    ),
+    TopicExercise(
+      id: 'family_part_3',
+      name: 'Family (Part 3)',
+      isComplete: false,
+      isFavorite: false,
+      exercises: [
+        Exercise(
+          id: 'family_part_3_1',
+          category: 'Family (Part 3)',
+          question: 'What is the Finnish translation for "Relatives"?',
+          options: ['Sukulaiset', 'Lapsia', 'Ystävä'],
+          answer: 'Sukulaiset',
+        ),
+        Exercise(
+          id: 'family_part_3_2',
+          category: 'Family (Part 3)',
+          question: 'What is the Finnish translation for "Baby"?',
+          options: ['Vauva', 'Lasta', 'Ystävä'],
+          answer: 'Vauva',
+        ),
+        Exercise(
+          id: 'family_part_3_3',
+          category: 'Family (Part 3)',
+          question: 'What is the Finnish translation for "Man"?',
+          options: ['Mies', 'Lapsia', 'Sukulaiset'],
+          answer: 'Mies',
+        ),
+        Exercise(
+          id: 'family_part_3_4',
+          category: 'Family (Part 3)',
+          question: 'What is the Finnish translation for "Children (partitive plural)"?',
+          options: ['Lapsia', 'Lasta', 'Vauva'],
+          answer: 'Lapsia',
+        ),
+        Exercise(
+          id: 'family_part_3_5',
+          category: 'Family (Part 3)',
+          question: 'What is the Finnish translation for "Friend"?',
+          options: ['Ystävä', 'Mies', 'Sukulaiset'],
+          answer: 'Ystävä',
         ),
       ],
     ),
