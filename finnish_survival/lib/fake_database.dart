@@ -53,41 +53,6 @@ final fakeDatabase = Database(
       ],
     ),
     Topic(
-      id: 'family',
-      name: 'Family',
-      isComplete: false,
-      isFavorite: false,
-      words: [
-        EnglishWord(
-          id: 'mother',
-          word: 'Mother',
-          finnishTranslations: [
-            FinnishWord(id: 'äiti', word: 'Äiti'),
-            FinnishWord(id: 'mutsi', word: 'Mutsi'),
-            FinnishWord(id: 'äiskä', word: 'Äiskä'),
-          ],
-        ),
-        EnglishWord(
-          id: 'father',
-          word: 'Father',
-          finnishTranslations: [
-            FinnishWord(id: 'isä', word: 'Isä'),
-            FinnishWord(id: 'iskä', word: 'Iskä'),
-            FinnishWord(id: 'isi', word: 'Isi'),
-          ],
-        ),
-        EnglishWord(
-          id: 'brother',
-          word: 'Brother',
-          finnishTranslations: [
-            FinnishWord(id: 'veli', word: 'Veli'),
-            FinnishWord(id: 'velipoika', word: 'Velipoika'),
-            FinnishWord(id: 'veljenpoika', word: 'Veljenpoika'),
-          ],
-        ),
-      ],
-    ),
-    Topic(
       id: 'verb_to_be',
       name: 'Verb "to be"',
       isComplete: false,
@@ -959,6 +924,70 @@ final fakeDatabase = Database(
         ),
       ],
     ),
+    Topic(
+      id: 'family_part_1',
+      name: 'Family (Part 1)',
+      isComplete: false,
+      isFavorite: false,
+      words: [
+        EnglishWord(
+          id: 'mother',
+          word: 'Mother',
+          finnishTranslations: [
+            FinnishWord(id: 'aiti', word: 'Äiti'),
+          ],
+        ),
+        EnglishWord(
+          id: 'father',
+          word: 'Father',
+          finnishTranslations: [
+            FinnishWord(id: 'isa', word: 'Isä'),
+          ],
+        ),
+        EnglishWord(
+          id: 'grandmother',
+          word: 'Grandmother',
+          finnishTranslations: [
+            FinnishWord(id: 'isoaiti', word: 'Isoäiti'),
+          ],
+        ),
+        EnglishWord(
+          id: 'grandfather',
+          word: 'Grandfather',
+          finnishTranslations: [
+            FinnishWord(id: 'isoisa', word: 'Isoisä'),
+          ],
+        ),
+        EnglishWord(
+          id: 'parents',
+          word: 'Parents',
+          finnishTranslations: [
+            FinnishWord(id: 'vanhemmat', word: 'Vanhemmat'),
+          ],
+        ),
+        EnglishWord(
+          id: 'child',
+          word: 'Child',
+          finnishTranslations: [
+            FinnishWord(id: 'lapsi', word: 'Lapsi'),
+          ],
+        ),
+        EnglishWord(
+          id: 'girl_daughter',
+          word: 'Girl / Daughter',
+          finnishTranslations: [
+            FinnishWord(id: 'tytto', word: 'Tyttö'),
+          ],
+        ),
+        EnglishWord(
+          id: 'son',
+          word: 'Son',
+          finnishTranslations: [
+            FinnishWord(id: 'poika', word: 'Poika'),
+          ],
+        ),
+      ],
+    ),
   ],
   topicExercises: [
     TopicExercise(
@@ -987,35 +1016,6 @@ final fakeDatabase = Database(
           question: 'What is the Finnish translation for "Thank you"?',
           options: ['Kiitos', 'Moi', 'Ei'],
           answer: 'Kiitos',
-        ),
-      ],
-    ),
-    TopicExercise(
-      id: 'family',
-      name: "Family",
-      isComplete: false,
-      isFavorite: false,
-      exercises: [
-        Exercise(
-          id: 'family_1',
-          category: 'Family',
-          question: 'What is the Finnish translation for "Mother"?',
-          options: ['Äiti', 'Isä', 'Veli'],
-          answer: 'Äiti',
-        ),
-        Exercise(
-          id: 'family_2',
-          category: 'Family',
-          question: 'What is the Finnish translation for "Father"?',
-          options: ['Äiti', 'Isä', 'Veli'],
-          answer: 'Isä',
-        ),
-        Exercise(
-          id: 'family_3',
-          category: 'Family',
-          question: 'What is the Finnish translation for "Brother"?',
-          options: ['Äiti', 'Isä', 'Veli'],
-          answer: 'Veli',
         ),
       ],
     ),
@@ -1468,6 +1468,49 @@ final fakeDatabase = Database(
           question: 'What is the Finnish translation for "Alone"?',
           options: ['Yhdessä', 'Yksin', 'Kumppani'],
           answer: 'Yksin',
+        ),
+      ],
+    ),
+    TopicExercise(
+      id: 'family_part_1',
+      name: 'Family (Part 1)',
+      isComplete: false,
+      isFavorite: false,
+      exercises: [
+        Exercise(
+          id: 'family_part_1_1',
+          category: 'Family (Part 1)',
+          question: 'What is the Finnish translation for "Mother"?',
+          options: ['Isä', 'Äiti', 'Isoäiti'],
+          answer: 'Äiti',
+        ),
+        Exercise(
+          id: 'family_part_1_2',
+          category: 'Family (Part 1)',
+          question: 'What is the Finnish translation for "Grandfather"?',
+          options: ['Isoisä', 'Poika', 'Lapsi'],
+          answer: 'Isoisä',
+        ),
+        Exercise(
+          id: 'family_part_1_3',
+          category: 'Family (Part 1)',
+          question: 'What is the Finnish translation for "Parents"?',
+          options: ['Vanhemmat', 'Tyttö', 'Isoisä'],
+          answer: 'Vanhemmat',
+        ),
+        Exercise(
+          id: 'family_part_1_4',
+          category: 'Family (Part 1)',
+          question: 'What is the Finnish translation for "Child"?',
+          options: ['Poika', 'Lapsi', 'Isoäiti'],
+          answer: 'Lapsi',
+        ),
+        Exercise(
+          id: 'family_part_1_5',
+          category: 'Family (Part 1)',
+          question: 'What is the Finnish translation for "Son"?',
+          options: ['Poika', 'Isoisä', 'Vanhemmat'],
+          answer: 'Poika',
         ),
       ],
     ),
