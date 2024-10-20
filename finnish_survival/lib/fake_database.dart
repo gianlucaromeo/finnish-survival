@@ -1188,6 +1188,127 @@ final fakeDatabase = Database(
         ),
       ],
     ),
+    Topic(
+      id: 'genitive_part_1',
+      name: 'Genitive (Part 1)',
+      isComplete: false,
+      isFavorite: false,
+      words: [
+        EnglishWord(
+          id: 'mine',
+          word: 'Mine',
+          finnishTranslations: [
+            FinnishWord(id: 'minun', word: 'Minun (ni)'),
+          ],
+        ),
+        EnglishWord(
+          id: 'your_singular',
+          word: 'Your (singular)',
+          finnishTranslations: [
+            FinnishWord(id: 'sinun', word: 'Sinun (si)'),
+          ],
+        ),
+        EnglishWord(
+          id: 'his_her',
+          word: 'His/Her',
+          finnishTranslations: [
+            FinnishWord(id: 'hänen', word: 'Hänen (nsa)'),
+          ],
+        ),
+        EnglishWord(
+          id: 'our',
+          word: 'Our',
+          finnishTranslations: [
+            FinnishWord(id: 'meidän', word: 'Meidän (mme)'),
+          ],
+        ),
+        EnglishWord(
+          id: 'your_plural',
+          word: 'Your (plural)',
+          finnishTranslations: [
+            FinnishWord(id: 'teidän', word: 'Teidän (nne)'),
+          ],
+        ),
+        EnglishWord(
+          id: 'their',
+          word: 'Their',
+          finnishTranslations: [
+            FinnishWord(id: 'heidän', word: 'Heidän (nsa)'),
+          ],
+        ),
+        EnglishWord(
+          id: 'whose',
+          word: 'Whose…?',
+          finnishTranslations: [
+            FinnishWord(id: 'kenen', word: 'Kenen…?'),
+          ],
+        ),
+        EnglishWord(
+          id: 'whose_wife_is_tynne',
+          word: 'Whose wife is Tynne?',
+          finnishTranslations: [
+            FinnishWord(id: 'kenen_vaimo_tynne_on', word: 'Kenen vaimo Tynne on?'),
+          ],
+        ),
+        EnglishWord(
+          id: 'juhanis_wife',
+          word: 'Juhani’s wife',
+          finnishTranslations: [
+            FinnishWord(id: 'juhanin_vaimo', word: 'Juhanin vaimo'),
+          ],
+        ),
+      ],
+    ),
+    Topic(
+      id: 'genitive_part_2',
+      name: 'Genitive (Part 2)',
+      isComplete: false,
+      isFavorite: false,
+      words: [
+        EnglishWord(
+          id: 'pekka_is_my_friend',
+          word: 'Pekka is my friend',
+          finnishTranslations: [
+            FinnishWord(id: 'pekka_on_minun_ystavani', word: 'Pekka on minun ystävä(ni)'),
+          ],
+        ),
+        EnglishWord(
+          id: 'is_this_your_dog',
+          word: 'Is this your dog?',
+          finnishTranslations: [
+            FinnishWord(id: 'onko_tama_sinun_koirasi', word: 'Onko tämä sinun koira(si)?'),
+          ],
+        ),
+        EnglishWord(
+          id: 'his_wife_is_sunee',
+          word: 'His wife is Sunee',
+          finnishTranslations: [
+            FinnishWord(id: 'hanen_vaimonsa_on_sunee', word: 'Hänen avovaimo(nsa) on Sunee'),
+          ],
+        ),
+        EnglishWord(
+          id: 'our_home_is_in_finland',
+          word: 'Our home is in Finland',
+          finnishTranslations: [
+            FinnishWord(id: 'meidan_kotimme_on_suomessa', word: 'Meidän koti(mme) on Suomessa'),
+          ],
+        ),
+        EnglishWord(
+          id: 'your_hometown_is_oulu',
+          word: 'Your hometown is Oulu',
+          finnishTranslations: [
+            FinnishWord(id: 'teidan_kotikaupunkinne_on_oulu', word: 'Teidän kotikaupunki(nne) on Oulu'),
+          ],
+        ),
+        EnglishWord(
+          id: 'their_phone_number_is',
+          word: 'Their phone number is...',
+          finnishTranslations: [
+            FinnishWord(id: 'heidan_puhelinnumeronsa_on', word: 'Heidän puhelinnumero(nsa) on…'),
+          ],
+        ),
+      ],
+    ),
   ],
   topicExercises: [
     TopicExercise(
@@ -1847,6 +1968,92 @@ final fakeDatabase = Database(
           question: 'What is the Finnish translation for "Doctor"?',
           options: ['Lääkäri', 'Kampaaja', 'Toimittaja'],
           answer: 'Lääkäri',
+        ),
+      ],
+    ),
+    TopicExercise(
+      id: 'genitive_part_1',
+      name: 'Genitive (Part 1)',
+      isComplete: false,
+      isFavorite: false,
+      exercises: [
+        Exercise(
+          id: 'genitive_part_1_1',
+          category: 'Genitive (Part 1)',
+          question: 'What is the Finnish translation for "Mine"?',
+          options: ['Minun (ni)', 'Sinun (si)', 'Meidän (mme)'],
+          answer: 'Minun (ni)',
+        ),
+        Exercise(
+          id: 'genitive_part_1_2',
+          category: 'Genitive (Part 1)',
+          question: 'What is the Finnish translation for "Your (singular)"?',
+          options: ['Hänen (nsa)', 'Sinun (si)', 'Heidän (nsa)'],
+          answer: 'Sinun (si)',
+        ),
+        Exercise(
+          id: 'genitive_part_1_3',
+          category: 'Genitive (Part 1)',
+          question: 'What is the Finnish translation for "Whose…?"',
+          options: ['Kenen…?', 'Juhanin vaimo', 'Meidän (mme)'],
+          answer: 'Kenen...?',
+        ),
+        Exercise(
+          id: 'genitive_part_1_4',
+          category: 'Genitive (Part 1)',
+          question: 'What is the Finnish translation for "Whose wife is Tynne?"',
+          options: ['Kenen vaimo Tynne on?', 'Sinun (si)', 'Meidän (mme)'],
+          answer: 'Kenen vaimo Tynne on?',
+        ),
+        Exercise(
+          id: 'genitive_part_1_5',
+          category: 'Genitive (Part 1)',
+          question: 'What is the Finnish translation for "Juhani’s wife"?',
+          options: ['Juhanin vaimo', 'Kenen…?', 'Heidän (nsa)'],
+          answer: 'Juhanin vaimo',
+        ),
+      ],
+    ),
+    TopicExercise(
+      id: 'genitive_part_2',
+      name: 'Genitive (Part 2)',
+      isComplete: false,
+      isFavorite: false,
+      exercises: [
+        Exercise(
+          id: 'genitive_part_2_1',
+          category: 'Genitive (Part 2)',
+          question: 'What is the Finnish translation for "Pekka is my friend"?',
+          options: ['Pekka on minun ystävä(ni)', 'Meidän koti(mme) on Suomessa', 'Hänen avovaimo(nsa) on Sunee'],
+          answer: 'Pekka on minun ystävä(ni)',
+        ),
+        Exercise(
+          id: 'genitive_part_2_2',
+          category: 'Genitive (Part 2)',
+          question: 'What is the Finnish translation for "Is this your dog?"',
+          options: ['Onko tämä sinun koira(si)?', 'Teidän kotikaupunki(nne) on Oulu', 'Heidän puhelinnumero(nsa) on…'],
+          answer: 'Onko tämä sinun koira(si)?',
+        ),
+        Exercise(
+          id: 'genitive_part_2_3',
+          category: 'Genitive (Part 2)',
+          question: 'What is the Finnish translation for "Their phone number is..."?',
+          options: ['Heidän puhelinnumero(nsa) on...', 'Meidän koti(mme) on Suomessa', 'Hänen avovaimo(nsa) on Sunee'],
+          answer: 'Heidän puhelinnumero(nsa) on...',
+        ),
+        Exercise(
+          id: 'genitive_part_2_4',
+          category: 'Genitive (Part 2)',
+          question: 'What is the Finnish translation for "His wife is Sunee"?',
+          options: ['Hänen avovaimo(nsa) on Sunee', 'Teidän kotikaupunki(nne) on Oulu', 'Pekka on minun ystävä(ni)'],
+          answer: 'Hänen avovaimo(nsa) on Sunee',
+        ),
+        Exercise(
+          id: 'genitive_part_2_5',
+          category: 'Genitive (Part 2)',
+          question: 'What is the Finnish translation for "Our home is in Finland"?',
+          options: ['Meidän koti(mme) on Suomessa', 'Pekka on minun ystävä(ni)', 'Heidän puhelinnumero(nsa) on…'],
+          answer: 'Meidän koti(mme) on Suomessa',
         ),
       ],
     ),
