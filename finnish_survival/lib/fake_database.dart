@@ -874,6 +874,91 @@ final fakeDatabase = Database(
         ),
       ],
     ),
+    Topic(
+      id: 'status',
+      name: 'Status',
+      isComplete: false,
+      isFavorite: false,
+      words: [
+        EnglishWord(
+          id: 'partner',
+          word: 'Partner',
+          finnishTranslations: [
+            FinnishWord(id: 'kumppani', word: 'Kumppani'),
+          ],
+        ),
+        EnglishWord(
+          id: 'married',
+          word: 'Married',
+          finnishTranslations: [
+            FinnishWord(id: 'naimisissa', word: 'Naimisissa'),
+          ],
+        ),
+        EnglishWord(
+          id: 'divorced',
+          word: 'Divorced',
+          finnishTranslations: [
+            FinnishWord(id: 'eronnut', word: 'Eronnut'),
+          ],
+        ),
+        EnglishWord(
+          id: 'unmarried',
+          word: 'Unmarried',
+          finnishTranslations: [
+            FinnishWord(id: 'naimaton', word: 'Naimaton'),
+          ],
+        ),
+        EnglishWord(
+          id: 'single_parent',
+          word: 'Single parent',
+          finnishTranslations: [
+            FinnishWord(id: 'yksinhuoltaja', word: 'Yksinhuoltaja'),
+          ],
+        ),
+        EnglishWord(
+          id: 'divorced_single_parent',
+          word: 'Divorced single parent',
+          finnishTranslations: [
+            FinnishWord(id: 'eronnut_yksinhuoltaja', word: 'Eronnut yksinhuoltaja'),
+          ],
+        ),
+        EnglishWord(
+          id: 'not_married_but_live_together',
+          word: 'Not married but live together',
+          finnishTranslations: [
+            FinnishWord(id: 'avoliitossa', word: 'Avoliitossa'),
+          ],
+        ),
+        EnglishWord(
+          id: 'together_as_one',
+          word: 'Together (as one)',
+          finnishTranslations: [
+            FinnishWord(id: 'yhdessä', word: 'Yhdessä'),
+          ],
+        ),
+        EnglishWord(
+          id: 'alone',
+          word: 'Alone',
+          finnishTranslations: [
+            FinnishWord(id: 'yksin', word: 'Yksin'),
+          ],
+        ),
+        EnglishWord(
+          id: 'single',
+          word: 'Single',
+          finnishTranslations: [
+            FinnishWord(id: 'sinkku', word: 'Sinkku'),
+          ],
+        ),
+        EnglishWord(
+          id: 'cohabitating',
+          word: 'Cohabitating',
+          finnishTranslations: [
+            FinnishWord(id: 'avoliitossa', word: 'Avoliitossa'),
+          ],
+        ),
+      ],
+    ),
   ],
   topicExercises: [
     TopicExercise(
@@ -1340,6 +1425,49 @@ final fakeDatabase = Database(
           question: 'What is the Finnish translation for "Ready"?',
           options: ['Peruuta', 'Valmis', 'Sähköpostitse'],
           answer: 'Valmis',
+        ),
+      ],
+    ),
+    TopicExercise(
+      id: 'status',
+      name: 'Status',
+      isComplete: false,
+      isFavorite: false,
+      exercises: [
+        Exercise(
+          id: 'status_1',
+          category: 'Status',
+          question: 'What is the Finnish translation for "Partner"?',
+          options: ['Kumppani', 'Yksinhuoltaja', 'Avoliitossa'],
+          answer: 'Kumppani',
+        ),
+        Exercise(
+          id: 'status_2',
+          category: 'Status',
+          question: 'What is the Finnish translation for "Divorced single parent"?',
+          options: ['Yksinhuoltaja', 'Eronnut yksinhuoltaja', 'Sinkku'],
+          answer: 'Eronnut yksinhuoltaja',
+        ),
+        Exercise(
+          id: 'status_3',
+          category: 'Status',
+          question: 'What is the Finnish translation for "Single"?',
+          options: ['Avoliitossa', 'Naimisissa', 'Sinkku'],
+          answer: 'Sinkku',
+        ),
+        Exercise(
+          id: 'status_4',
+          category: 'Status',
+          question: 'What is the Finnish translation for "Not married but live together"?',
+          options: ['Avoliitossa', 'Eronnut', 'Naimaton'],
+          answer: 'Avoliitossa',
+        ),
+        Exercise(
+          id: 'status_5',
+          category: 'Status',
+          question: 'What is the Finnish translation for "Alone"?',
+          options: ['Yhdessä', 'Yksin', 'Kumppani'],
+          answer: 'Yksin',
         ),
       ],
     ),
