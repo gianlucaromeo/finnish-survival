@@ -13,15 +13,14 @@ class LearnPageSmall extends StatelessWidget {
         child: Padding(
           padding: AppPadding.scaffoldPadding,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.height * 0.5,
-                  child: Image.asset(
-                    'assets/learn.jpg',
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
+              SizedBox(
+                width: MediaQuery.of(context).size.height * 0.2,
+                child: Image.asset(
+                  'assets/learn.jpg',
+                  width: double.infinity,
+                  fit: BoxFit.cover,
                 ),
               ),
 

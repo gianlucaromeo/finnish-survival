@@ -20,10 +20,10 @@ class LearnPageLarge extends StatelessWidget {
                 child: Padding(
                   padding: AppPadding.scaffoldPadding,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        width: MediaQuery.of(context).size.height * 0.5,
+                        width: MediaQuery.of(context).size.height * 0.3,
                         child: Center(
                           child: Image.asset(
                             'assets/learn.jpg',

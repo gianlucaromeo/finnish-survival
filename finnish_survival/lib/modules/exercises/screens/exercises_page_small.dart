@@ -15,15 +15,14 @@ class ExercisesPageSmall extends StatelessWidget {
           child: Padding(
             padding: AppPadding.scaffoldPadding,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Center(
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.height * 0.4,
-                    child: Image.asset(
-                      'assets/practice.jpg',
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                    ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.height * 0.25,
+                  child: Image.asset(
+                    'assets/practice.jpg',
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
                 ),
 
