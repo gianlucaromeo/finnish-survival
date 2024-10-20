@@ -10,3 +10,4 @@ UI/UX
 - Add a way to see the correct answer
 - Add a way to get hints
 - Add nice "End of the game" screen
+- Add something related to favorites
