@@ -1,0 +1,12 @@
+Logic
+- Refresh page on the web doesn't keep track of the current page
+
+UI/UX
+- Make items fully clickable
+- Explain how learn works - people get confused
+- Add different solutions for the same question (like "mä", "minä")
+- Re-trigger error when user makes mistakes twice
+- Add a way to skip a question
+- Add a way to see the correct answer
+- Add a way to get hints
+- Add nice "End of the game" screen
