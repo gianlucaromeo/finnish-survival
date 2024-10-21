@@ -9,6 +9,7 @@ class AppPadding {
 class AppColors {
   /* HIGHLIGHTS */
   static get highlightsDarkest => const Color(0xFF006FFD);
+  static get highlightsLightest => const Color(0xFFEAF2FF);
 
   /* NEUTRAL / LIGHT */
   static get neutralLightLightest => const Color(0xFFFFFFFF);

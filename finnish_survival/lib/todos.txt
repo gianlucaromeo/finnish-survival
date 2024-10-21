@@ -8,8 +8,8 @@ UI/UX
 - Add different solutions for the same question (like "mä", "minä")
 - Re-trigger error when user makes mistakes twice
 - Add a way to skip a question
-- Add a way to see the correct answer
-- Add a way to get hints
+✅ Add a way to see the correct answer
+✅ Add a way to get hints
 - Add nice "End of the game" screen
 - Add something related to favorites
 - Add animations

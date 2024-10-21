@@ -32,17 +32,17 @@ class TopicExercisePageLarge extends GetView<ExercisesPageController> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        const Hint(),
+                        16.0.verticalSpace,
                         const TopicExerciseQuestion(),
-                        8.0.verticalSpace,
-
+                        16.0.verticalSpace,
                         TopicExerciseForm(),
-
                         24.0.verticalSpace,
                       ],
                     ),
                   ),
                 ),
-               // const TopicExerciseNextButton(),
+                // const TopicExerciseNextButton(),
                 24.0.verticalSpace,
               ],
             ),
