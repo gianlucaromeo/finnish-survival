@@ -59,7 +59,7 @@ class TopicExerciseForm extends GetView<ExercisesPageController> {
               final answer = controller.answerOf(controller.currentExerciseIndex.value);
               if (value == null || value.isEmpty) {
                 return 'Please provide an answer';
-              } else if (value.toLowerCase() != answer.toLowerCase()) {
+              } else if (value.toLowerCase().trim() != answer.toLowerCase()) {
                 return 'Ops. That is not the correct answer. Try again!';
               }
               return null;
