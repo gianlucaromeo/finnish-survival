@@ -1,6 +1,15 @@
 import 'package:finnish_survival/modules/common/common.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/services.dart';
+
+void setSystemUIOverlayColor(Color color) {
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+        statusBarColor: color,
+    ),
+  );
+}
 
 class AppPadding {
   static get scaffoldPadding => [24.0, 24.0, 24.0, 0.0].fromLTRB;

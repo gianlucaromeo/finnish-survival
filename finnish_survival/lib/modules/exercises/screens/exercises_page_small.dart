@@ -11,36 +11,12 @@ class ExercisesPageSmall extends StatelessWidget {
       canPop: false,
       child: Scaffold(
         backgroundColor: AppColors.neutralLightLightest,
-        body: SafeArea(
-          child: Padding(
-            padding: AppPadding.scaffoldPadding,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.height * 0.25,
-                  child: Image.asset(
-                    'assets/practice.jpg',
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-
-                Text(
-                  "Ready to test your Finnish skills?",
-                  style: AppFonts.h1,
-                ),
-
-                24.0.verticalSpace,
-                const Expanded(
-                  child: ExercisesList(),
-                ),
-              ],
-            ),
+        body: const SafeArea(
+          child: CustomSliverList(
+            title: 'Ready to test your Finnish skills?',
+            child: ExercisesList(),
           ),
         ),
-
-        /// BOTTOM BAR
         bottomNavigationBar: const AppBottomBar(),
       ),
     );

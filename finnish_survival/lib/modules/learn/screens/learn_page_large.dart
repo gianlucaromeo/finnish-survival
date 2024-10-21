@@ -15,32 +15,12 @@ class LearnPageLarge extends StatelessWidget {
           child: Row(
             children: [
               const AppNavigationRail(),
-
               Expanded(
                 child: Padding(
                   padding: AppPadding.scaffoldPadding,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        width: MediaQuery.of(context).size.height * 0.3,
-                        child: Center(
-                          child: Image.asset(
-                            'assets/learn.jpg',
-                            width: double.infinity,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-
-                      Text(
-                        "What do you want to learn today?",
-                        style: AppFonts.h1,
-                      ),
-
-                      24.0.verticalSpace,
-                      const Expanded(child: LearnTopicsList()),
-                    ],
+                  child: const CustomSliverList(
+                    title: 'What do you want to learn?',
+                    child: LearnTopicsList(),
                   ),
                 ),
               ),

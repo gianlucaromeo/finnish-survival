@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     super.key,
-    required this.title,
+    this.title,
     this.onBack,
   });
 
-  final String title;
+  final String? title;
   final Function? onBack;
 
   @override
@@ -23,7 +23,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         icon: const Icon(Icons.arrow_back_ios_outlined),
         color: AppColors.highlightsDarkest,
       ) : null,
-      title: Text(title, style: AppFonts.h4),
+      title: Text(title ?? '', style: AppFonts.h4),
       centerTitle: false,
     );
   }

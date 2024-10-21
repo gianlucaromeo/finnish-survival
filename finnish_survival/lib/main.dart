@@ -16,6 +16,8 @@ void main() async {
   Get.put(LearnPageController(), permanent: true);
   Get.put(ExercisesPageController(), permanent: true);
 
+  setSystemUIOverlayColor(AppColors.neutralLightLightest);
+
   runApp(const MainApp());
 }
 
@@ -66,11 +68,7 @@ class MainApp extends StatelessWidget {
           ),
         ),
       ],
-      home: const ResponsiveLayout(
-        small: LearnPageSmall(),
-        medium: LearnPageLarge(),
-        large: LearnPageLarge(),
-      ),
+      initialRoute: '/learn',
     );
   }
 }

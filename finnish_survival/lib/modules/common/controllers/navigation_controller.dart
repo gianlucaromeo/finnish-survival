@@ -14,7 +14,7 @@ class NavigationController {
 
   void setCurrentIndex(int index) {
     _currentIndex = index;
-    Get.offAndToNamed(_routes[index]);
+    Get.offAllNamed(_routes[index]);
   }
 
   void pushToIndex(int index) {
