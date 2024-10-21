@@ -11,3 +11,6 @@ UI/UX
 - Add a way to get hints
 - Add nice "End of the game" screen
 - Add something related to favorites
+- Add animations
+- Fix images size (they are different)
+- Add different behaviors on Android and iOS
