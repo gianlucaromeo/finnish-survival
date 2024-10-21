@@ -19,7 +19,7 @@ class ExercisesPageLarge extends StatelessWidget {
                 AppNavigationRail(),
                 Expanded(
                   child: CustomSliverList(
-                    title: 'Ready to test your Finnish skills?',
+                    title: 'Let\'s practice!',
                     child: ExercisesList(),
                   ),
                 ),

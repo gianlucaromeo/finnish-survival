@@ -54,7 +54,7 @@ final fakeDatabase = Database(
     ),
     Topic(
       id: 'verb_to_be',
-      name: 'Verb "to be"',
+      name: 'Verb \'to be\'',
       isComplete: false,
       isFavorite: false,
       words: [

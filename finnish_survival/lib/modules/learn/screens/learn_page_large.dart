@@ -9,23 +9,18 @@ class LearnPageLarge extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.neutralLightLightest,
-      body: Center(
-        child: SizedBox(
-          width: 1250.0,
-          child: Row(
-            children: [
-              const AppNavigationRail(),
-              Expanded(
-                child: Padding(
-                  padding: AppPadding.scaffoldPadding,
-                  child: const CustomSliverList(
-                    title: 'What do you want to learn?',
-                    child: LearnTopicsList(),
-                  ),
-                ),
+      body: SizedBox(
+        width: 1250.0,
+        child: Row(
+          children: [
+            const AppNavigationRail(),
+            Expanded(
+              child: const CustomSliverList(
+                title: 'What do you want to learn?',
+                child: LearnTopicsList(),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

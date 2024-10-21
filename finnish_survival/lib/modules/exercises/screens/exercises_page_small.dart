@@ -13,7 +13,7 @@ class ExercisesPageSmall extends StatelessWidget {
         backgroundColor: AppColors.neutralLightLightest,
         body: const SafeArea(
           child: CustomSliverList(
-            title: 'Ready to test your Finnish skills?',
+            title: 'Let\'s practice!',
             child: ExercisesList(),
           ),
         ),

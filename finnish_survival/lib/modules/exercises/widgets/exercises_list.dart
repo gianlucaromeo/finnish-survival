@@ -11,10 +11,10 @@ class ExercisesList extends GetView<ExercisesPageController> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Obx(
-            () => Column(
+        () => Column(
           children: [
             ...controller.database.value.topicExercises.map(
-                  (topicExercise) {
+              (topicExercise) {
                 return TopicExerciseItem(
                   topic: topicExercise,
                   onFavoriteTap: () {

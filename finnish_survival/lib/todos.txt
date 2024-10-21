@@ -11,6 +11,7 @@ UI/UX
 - Add different solutions for the same question (like "mä", "minä")
 - Re-trigger error when user makes mistakes twice
 - Add a way to skip a question
+✅ Fix: on mobile on web, there is no app bar
 ✅ Add trim to the answer
 ✅ Add a way to see the correct answer
 ✅ Add a way to get hints
