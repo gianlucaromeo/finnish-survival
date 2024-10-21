@@ -1,5 +1,6 @@
 Logic
 - Refresh page on the web doesn't keep track of the current page
+✅ Fix: when the user goes back to the previous word, the translation is not shown
 
 UI/UX
 ✅ Make items fully clickable

@@ -25,12 +25,13 @@ class LearnTopicItem extends StatelessWidget {
 
           /// ITEM
           Expanded(
-              child: HoverableTile(
-            title: topic.name,
-            isFavorite: topic.isFavorite,
-            onFavoriteTap: onFavoriteTap,
-            onTap: onTap,
-          )),
+            child: HoverableTile(
+              title: topic.name,
+              isFavorite: topic.isFavorite,
+              onFavoriteTap: onFavoriteTap,
+              onTap: onTap,
+            ),
+          ),
         ],
       ),
     );

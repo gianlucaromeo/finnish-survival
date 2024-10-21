@@ -12,8 +12,8 @@ class LearnTopicAppBar extends GetView<LearnPageController>
     return CustomAppBar(
       title: controller.currentTopic.value!.name,
       onBack: () {
-        Get.back();
         controller.resetTopic();
+        Get.back();
       },
     );
   }

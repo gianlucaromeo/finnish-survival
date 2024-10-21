@@ -20,13 +20,7 @@ class LearnTopicsList extends GetView<LearnPageController> {
                   topic: topic,
                   onTap: () {
                     controller.setTopic(topic);
-                    Get.to(
-                      const ResponsiveLayout(
-                        small: LearnTopicPageSmall(),
-                        medium: LearnTopicPageLarge(),
-                        large: LearnTopicPageLarge(),
-                      ),
-                    );
+                    Get.find<NavigationController>().pushToIndex(3);
                   },
                   onFavoriteTap: () {
                     controller.toggleTopicIsFavorite(topic.id);

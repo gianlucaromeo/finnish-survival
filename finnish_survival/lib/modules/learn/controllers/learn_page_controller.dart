@@ -53,6 +53,7 @@ class LearnPageController extends GetxController {
   void setTopic(Topic topic) {
     currentTopic.value = topic;
     currentWordIndex.value = 0;
+    isLastWord.value = false;
   }
 
   void resetTopic() async {
@@ -60,7 +61,6 @@ class LearnPageController extends GetxController {
     currentTopic.value = null;
     currentWordIndex.value = null;
     isLastWord.value = false;
-    currentTranslations.clear();
   }
 
   void _updateCurrentTranslations() {

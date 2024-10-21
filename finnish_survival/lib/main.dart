@@ -43,6 +43,14 @@ class MainApp extends StatelessWidget {
           transition: Transition.noTransition,
         ),
         GetPage(
+          name: '/learn/current',
+          page: () => const ResponsiveLayout(
+            small: LearnTopicPageSmall(),
+            medium: LearnTopicPageLarge(),
+            large: LearnTopicPageLarge(),
+          ),
+        ),
+        GetPage(
           name: '/exercises',
           page: () => const ResponsiveLayout(
             small: ExercisesPageSmall(),

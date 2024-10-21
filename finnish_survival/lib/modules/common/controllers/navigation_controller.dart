@@ -5,6 +5,7 @@ class NavigationController {
     '/learn',
     '/exercises',
     '/exercises/current',
+    '/learn/current',
   ];
 
   int _currentIndex = 0;
