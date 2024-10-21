@@ -2,7 +2,7 @@ Logic
 - Refresh page on the web doesn't keep track of the current page
 
 UI/UX
-- Make items fully clickable
+✅ Make items fully clickable
 - Explain how learn works - people get confused
 - Add different solutions for the same question (like "mä", "minä")
 - Re-trigger error when user makes mistakes twice
