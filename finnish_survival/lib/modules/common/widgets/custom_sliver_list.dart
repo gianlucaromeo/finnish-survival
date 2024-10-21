@@ -19,7 +19,7 @@ class CustomSliverList extends StatelessWidget {
         // On web, the app bar is not visible, so we need to add some space
         if (kIsWeb && MediaQuery.of(context).size.width < 600)
           SliverToBoxAdapter(
-            child: 80.0.verticalSpace,
+            child: 25.0.verticalSpace,
           ),
 
         SliverAppBar(
