@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:finnish_survival/modules/common/common.dart';
 import 'package:finnish_survival/modules/exercises/exercises.dart';
 import 'package:flutter/material.dart';
@@ -58,7 +56,7 @@ class TopicExerciseForm extends GetView<ExercisesPageController> {
             ),
             style: AppFonts.bodyM,
             validator: (value) {
-              final answer = controller.answerOf(controller.currentExerciseIndex.value!);
+              final answer = controller.answerOf(controller.currentExerciseIndex.value);
               if (value == null || value.isEmpty) {
                 return 'Please provide an answer';
               } else if (value.toLowerCase() != answer.toLowerCase()) {
