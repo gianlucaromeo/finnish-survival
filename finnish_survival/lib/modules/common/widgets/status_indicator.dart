@@ -11,15 +11,24 @@ class StatusIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 8.0,
-      height: 50.0,
-      decoration: BoxDecoration(
-        color: isComplete
-            ? AppColors.highlightsDarkest
-            : AppColors.neutralLightMedium,
-        borderRadius: BorderRadius.circular(4.0),
-      ),
+    final isSmallScreen = MediaQuery.sizeOf(context).width < 600;
+    final radius = isSmallScreen ? 12.0 : 16.0;
+
+    if (isComplete) {
+      return CircleAvatar(
+        radius: radius,
+        backgroundColor: AppColors.highlightsDarkest,
+        child: Icon(
+          Icons.check_outlined,
+          color: AppColors.neutralLightLightest,
+          size: radius,
+        ),
+      );
+    }
+
+    return CircleAvatar(
+      backgroundColor: AppColors.neutralLightLight,
+      radius: radius,
     );
   }
 }

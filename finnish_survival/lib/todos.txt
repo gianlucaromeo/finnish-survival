@@ -3,6 +3,7 @@ Logic
 
 UI/UX
 ✅ Make items fully clickable
+✅ Change status indicator to avoid confusion on the current state
 - Explain how learn works - people get confused
 - Add different solutions for the same question (like "mä", "minä")
 - Re-trigger error when user makes mistakes twice
