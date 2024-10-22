@@ -31,6 +31,10 @@ class ExercisesList extends GetView<ExercisesPageController> {
                 );
               },
             ),
+
+            if (controller.showFavorites.value &&
+                controller.thereAreNoFavoritesTopics)
+              const NoFavorites(),
           ],
         ),
       ),

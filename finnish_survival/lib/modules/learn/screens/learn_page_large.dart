@@ -9,26 +9,28 @@ class LearnPageLarge extends GetView<LearnPageController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.neutralLightLightest,
-      body: SizedBox(
-        width: 1250.0,
-        child: Row(
-          children: [
-            const AppNavigationRail(),
-            Expanded(
-              child: CustomSliverList(
-                title: 'What do you want to learn?',
-                subtitle: Obx(
-                  () => ShowFavoritesFilter(
-                    showFavorites: controller.showFavorites.value,
-                    onChanged: (value) {
-                      controller.setShowFavorites(value);
-                    },
+      body: Center(
+        child: SizedBox(
+          width: 1250.0,
+          child: Row(
+            children: [
+              const AppNavigationRail(),
+              Expanded(
+                child: CustomSliverList(
+                  title: 'What do you want to learn?',
+                  subtitle: Obx(
+                    () => ShowFavoritesFilter(
+                      showFavorites: controller.showFavorites.value,
+                      onChanged: (value) {
+                        controller.setShowFavorites(value);
+                      },
+                    ),
                   ),
+                  child: const LearnTopicsList(),
                 ),
-                child: const LearnTopicsList(),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -43,6 +43,9 @@ class ExercisesPageController extends GetxController {
     _formKey.value = GlobalKey<FormState>();
   }
 
+  bool get thereAreNoFavoritesTopics => database.value.topicExercises
+      .every((topicExercise) => !topicExercise.isFavorite);
+
   void setShowFavorites(bool value) {
     _showFavorites.value = value;
   }

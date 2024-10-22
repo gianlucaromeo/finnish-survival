@@ -1,5 +1,4 @@
-import 'package:finnish_survival/modules/learn/learn.dart';
-import 'package:finnish_survival/modules/common/common.dart';
+import 'package:finnish_survival/finnish_survival.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -32,6 +31,9 @@ class LearnTopicsList extends GetView<LearnPageController> {
                 );
               },
             ),
+            if (controller.showFavorites.value &&
+                controller.thereAreNoFavoritesTopics)
+              const NoFavorites(),
           ],
         ),
       ),

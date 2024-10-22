@@ -28,6 +28,9 @@ class LearnPageController extends GetxController {
     );
   }
 
+  bool get thereAreNoFavoritesTopics =>
+      database.value.topics.every((topic) => !topic.isFavorite);
+
   void setShowFavorites(bool value) {
     _showFavorites.value = value;
   }
