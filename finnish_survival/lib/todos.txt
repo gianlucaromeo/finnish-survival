@@ -18,5 +18,5 @@ UI/UX
 - Add nice "End of the game" screen
 - Add something related to favorites
 - Add animations
-- Fix images size (they are different)
+✅ Fix images size (they are different) -> Removed :)
 - Add different behaviors on Android and iOS
