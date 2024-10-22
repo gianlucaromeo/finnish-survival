@@ -6,4 +6,5 @@ export 'favorite_icon_button.dart';
 export 'filter.dart';
 export 'hoverable_tile.dart';
 export 'responsive_layout.dart';
+export 'show_favorites_filter.dart';
 export 'status_indicator.dart';

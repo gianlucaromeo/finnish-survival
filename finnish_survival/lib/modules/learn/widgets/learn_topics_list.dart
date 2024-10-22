@@ -16,6 +16,10 @@ class LearnTopicsList extends GetView<LearnPageController> {
           children: [
             ...controller.database.value.topics.map(
               (topic) {
+                if (controller.showFavorites.value && !topic.isFavorite) {
+                  return const SizedBox.shrink();
+                }
+
                 return LearnTopicItem(
                   topic: topic,
                   onTap: () {

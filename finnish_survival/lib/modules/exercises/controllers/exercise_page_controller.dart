@@ -15,6 +15,10 @@ class ExercisesPageController extends GetxController {
   final RxBool _askedForHint = false.obs;
   final RxInt _hintCounter = 0.obs;
 
+  final RxBool _showFavorites = false.obs;
+
+  RxBool get showFavorites => _showFavorites;
+
   final Rx<FormKey> _formKey = FormKey().obs;
 
   Rxn<TopicExercise> get currentTopicExercise => _currentTopicExercise;
@@ -37,6 +41,10 @@ class ExercisesPageController extends GetxController {
   onInit() {
     super.onInit();
     _formKey.value = GlobalKey<FormState>();
+  }
+
+  void setShowFavorites(bool value) {
+    _showFavorites.value = value;
   }
 
   String answerOf(int index) {

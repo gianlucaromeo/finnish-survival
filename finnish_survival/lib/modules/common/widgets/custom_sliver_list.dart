@@ -6,10 +6,12 @@ class CustomSliverList extends StatelessWidget {
   const CustomSliverList({
     super.key,
     required this.title,
+    this.subtitle,
     required this.child,
   });
 
   final String title;
+  final Widget? subtitle;
   final Widget child;
 
   @override
@@ -22,6 +24,7 @@ class CustomSliverList extends StatelessWidget {
             child: 25.0.verticalSpace,
           ),
 
+        /// APP BAR
         SliverAppBar(
           expandedHeight: 140.0,
           collapsedHeight: 80.0,
@@ -51,6 +54,17 @@ class CustomSliverList extends StatelessWidget {
             },
           ),
         ),
+
+        /// SUBTITLE
+        if (subtitle != null)
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: [20.0, 0.0, 20.0, 20.0].fromLTRB,
+              child: subtitle,
+            ),
+          ),
+
+        /// CHILD
         SliverToBoxAdapter(
           child: Padding(
             padding: AppPadding.scaffoldPadding,

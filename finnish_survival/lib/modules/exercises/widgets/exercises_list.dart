@@ -15,6 +15,10 @@ class ExercisesList extends GetView<ExercisesPageController> {
           children: [
             ...controller.database.value.topicExercises.map(
               (topicExercise) {
+                if (controller.showFavorites.value && !topicExercise.isFavorite) {
+                  return const SizedBox.shrink();
+                }
+
                 return TopicExerciseItem(
                   topic: topicExercise,
                   onFavoriteTap: () {

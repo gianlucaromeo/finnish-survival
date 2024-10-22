@@ -9,7 +9,11 @@ class LearnPageController extends GetxController {
   final RxnInt currentWordIndex = RxnInt();
   final RxBool isLastWord = false.obs;
 
+  final RxBool _showFavorites = false.obs;
+
   Rx<Database> get database => _fakeDatabaseService.fakeDatabase;
+
+  RxBool get showFavorites => _showFavorites;
 
   @override
   void onInit() {
@@ -22,6 +26,10 @@ class LearnPageController extends GetxController {
         return currentTopic.value != null && currentWordIndex.value != null;
       },
     );
+  }
+
+  void setShowFavorites(bool value) {
+    _showFavorites.value = value;
   }
 
   void toggleFinnishWordIsFavorite(String finnishWordId) {

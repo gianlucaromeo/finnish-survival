@@ -16,7 +16,8 @@ UI/UX
 ✅ Add a way to see the correct answer
 ✅ Add a way to get hints
 - Add nice "End of the game" screen
-- Add something related to favorites
+✅ Add something related to favorites
 - Add animations
 ✅ Fix images size (they are different) -> Removed :)
+- Fix: content in large screen is not centered
 - Add different behaviors on Android and iOS
