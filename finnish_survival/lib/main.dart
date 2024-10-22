@@ -27,6 +27,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      title: 'Finnish Survival',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData().copyWith(
         textTheme: AppFonts.textTheme,
         textSelectionTheme: TextSelectionThemeData(
