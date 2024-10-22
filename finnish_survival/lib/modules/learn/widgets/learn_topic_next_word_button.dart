@@ -21,7 +21,7 @@ class LearnTopicNextWordButton extends GetView<LearnPageController> {
               controller.nextWord();
             } else {
               controller.markTopicAsComplete(controller.currentTopic.value!.id);
-              Get.back();
+              Get.find<NavigationController>().setCurrentIndex(0);
               controller.resetTopic();
             }
           },
