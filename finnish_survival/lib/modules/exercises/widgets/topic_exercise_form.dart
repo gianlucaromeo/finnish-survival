@@ -16,6 +16,7 @@ class TopicExerciseForm extends GetView<ExercisesPageController> {
     return Form(
       key: controller.formKey,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           // Answer input
           TextFormField(

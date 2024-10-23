@@ -16,11 +16,13 @@ class TopicExercisePageSmall extends GetView<ExercisesPageController> {
         body: Padding(
           padding: AppPadding.scaffoldPadding,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const TopicExerciseStepsProgressBar(),
               32.0.verticalSpace,
               Expanded(
                 child: SingleChildScrollView(
+                  reverse: true,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.start,
