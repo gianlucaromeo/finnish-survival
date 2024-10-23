@@ -4,15 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class TopicExerciseForm extends GetView<ExercisesPageController> {
-  TopicExerciseForm({
+  const TopicExerciseForm({
     super.key,
   });
 
-  final _focusNode = FocusNode();
+  // final _focusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
-    _focusNode.requestFocus();
     return Form(
       key: controller.formKey,
       child: Column(
@@ -20,7 +19,7 @@ class TopicExerciseForm extends GetView<ExercisesPageController> {
         children: [
           // Answer input
           TextFormField(
-            focusNode: _focusNode,
+            // focusNode: _focusNode,
             decoration: InputDecoration(
               hintText: 'Type your answer here',
               border: OutlineInputBorder(
@@ -74,7 +73,7 @@ class TopicExerciseForm extends GetView<ExercisesPageController> {
                   controller.nextExercise();
                 }
               }
-              _focusNode.requestFocus();
+              // _focusNode.requestFocus();
             },
           ),
           16.0.verticalSpace,

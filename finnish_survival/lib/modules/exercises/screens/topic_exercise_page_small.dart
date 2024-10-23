@@ -31,7 +31,7 @@ class TopicExercisePageSmall extends GetView<ExercisesPageController> {
                       16.0.verticalSpace,
                       const TopicExerciseQuestion(),
                       16.0.verticalSpace,
-                      TopicExerciseForm(),
+                      const TopicExerciseForm(),
                       24.0.verticalSpace,
                     ],
                   ),
