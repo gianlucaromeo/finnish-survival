@@ -20,7 +20,7 @@ class TopicExerciseQuestion extends GetView<ExercisesPageController> {
       final index = controller.currentExerciseIndex.value;
       return Text(
         controller.currentTopicExercise.value!.exercises[index].question,
-        style: AppFonts.h1,
+        style: AppFonts.h2,
       );
     });
   }

@@ -20,17 +20,19 @@ class TopicExercisePageSmall extends GetView<ExercisesPageController> {
               const TopicExerciseStepsProgressBar(),
               32.0.verticalSpace,
               Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Hint(),
-                    16.0.verticalSpace,
-                    const TopicExerciseQuestion(),
-                    16.0.verticalSpace,
-                    TopicExerciseForm(),
-                    24.0.verticalSpace,
-                  ],
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Hint(),
+                      16.0.verticalSpace,
+                      const TopicExerciseQuestion(),
+                      16.0.verticalSpace,
+                      TopicExerciseForm(),
+                      24.0.verticalSpace,
+                    ],
+                  ),
                 ),
               ),
             ],

@@ -21,4 +21,5 @@ UI/UX
 - Add animations
 ✅ Fix images size (they are different) -> Removed :)
 ✅ Fix: content in large screen is not centered
+✅ Fix: on small screens, hints and keyboard take too much space - make it scrollable
 - Add different behaviors on Android and iOS
