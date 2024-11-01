@@ -50,7 +50,6 @@ class MainApp extends StatelessWidget {
           name: '/learn/current',
           page: () => const ResponsiveLayout(
             small: LearnTopicPageSmall(),
-            medium: LearnTopicPageLarge(),
             large: LearnTopicPageLarge(),
           ),
         ),
